@@ -56,16 +56,6 @@
         body {
             font-family: 'Inter', sans-serif;
         }
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-        }
-        .glass-dark {
-            background: rgba(15, 23, 42, 0.85);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-        }
         .badge-pulse {
             animation: pulse-border 2s infinite;
         }
@@ -206,14 +196,12 @@
 
     <!-- Hero Section -->
     <section id="home" class="relative overflow-hidden bg-gradient-to-b from-slate-900 via-slate-950 to-slate-900 py-16 lg:py-24 border-b border-slate-800">
-        <!-- Ambient Glow Effects -->
         <div class="absolute top-1/4 left-10 w-96 h-96 bg-mimo-700/20 rounded-full filter blur-[120px] pointer-events-none"></div>
         <div class="absolute bottom-10 right-10 w-96 h-96 bg-sol-600/20 rounded-full filter blur-[120px] pointer-events-none"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid lg:grid-cols-12 gap-12 items-center">
                 
-                <!-- Left Text Content -->
                 <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
                     <div class="inline-flex items-center gap-2 bg-gradient-to-r from-mimo-900/60 to-purple-900/60 border border-mimo-500/30 text-mimo-300 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider shadow-inner">
                         <span>✨ A Revolução do Presente & da Economia</span>
@@ -231,7 +219,6 @@
                         <span class="text-mimo-300 underline font-semibold">já com embalagem premium inclusa</span>, e levamos inteligência sustentável para a sua conta de luz através de projetos de Energia Solar.
                     </p>
 
-                    <!-- Dual CTAs -->
                     <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
                         <a href="#store" class="w-full sm:w-auto bg-gradient-to-r from-mimo-600 to-purple-600 hover:from-mimo-500 hover:to-purple-500 text-white font-extrabold px-8 py-4 rounded-2xl shadow-glow-mimo transition transform hover:-translate-y-1 flex items-center justify-center gap-2">
                             <span>🎁 Explorar Loja de Presentes</span>
@@ -241,7 +228,6 @@
                         </a>
                     </div>
 
-                    <!-- Highlight Badges -->
                     <div class="pt-6 grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs text-slate-300 border-t border-slate-800/80">
                         <div class="flex items-center gap-2">
                             <span class="text-base">📦</span>
@@ -258,36 +244,32 @@
                     </div>
                 </div>
 
-                <!-- Right Feature Showcase Display -->
                 <div class="lg:col-span-5 relative flex justify-center">
                     <div class="relative w-full max-w-md bg-slate-900/90 rounded-3xl p-6 border border-slate-800 shadow-2xl backdrop-blur-xl">
                         
-                        <!-- Box & Bag Packaging Badge -->
-                        <div class="absolute -top-4 -right-4 bg-gradient-to-r from-mimo-600 to-roseGift-500 text-white font-black text-xs px-4 py-2 rounded-2xl shadow-lg flex items-center gap-1.5 badge-pulse">
+                        <div class="absolute -top-4 -right-4 bg-gradient-to-r from-mimo-600 to-roseGift-500 text-white font-black text-xs px-4 py-2 rounded-2xl shadow-lg flex items-center gap-1.5 badge-pulse z-10">
                             <span>🎁 CAIXA KRAFT + SACOLA INCLUSAS</span>
                         </div>
 
-                        <!-- Product Preview Card -->
-                        <div class="bg-gradient-to-b from-slate-800/80 to-slate-900 rounded-2xl p-6 border border-slate-700/60 text-center relative overflow-hidden group">
-                            <div class="text-7xl my-4 transform group-hover:scale-110 transition duration-300">☕🎁</div>
+                        <div class="bg-gradient-to-b from-slate-800/80 to-slate-900 rounded-2xl p-4 border border-slate-700/60 text-center relative overflow-hidden group">
+                            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&auto=format&fit=crop" alt="Destaque Caneca" class="w-full h-48 object-cover rounded-xl mb-3 group-hover:scale-105 transition duration-300">
                             <span class="bg-mimo-500/20 text-mimo-300 text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full border border-mimo-500/30">
                                 Mais Vendido • Linha Profissões
                             </span>
-                            <h3 class="text-xl font-black text-white mt-3">Caneca "Dev Full Stack & Café"</h3>
+                            <h3 class="text-lg font-black text-white mt-2">Caneca "Dev Full Stack & Café"</h3>
                             <p class="text-xs text-slate-400 mt-1">Acompanha caixinha decorada e sacolinha especial com laço pronta para entregar.</p>
                             
-                            <div class="flex items-center justify-between mt-6 pt-4 border-t border-slate-800">
+                            <div class="flex items-center justify-between mt-4 pt-3 border-t border-slate-800">
                                 <div>
                                     <span class="text-xs text-slate-400 block text-left">Preço do Mimo</span>
-                                    <span class="text-2xl font-black text-mimo-400">R$ 39,90</span>
+                                    <span class="text-xl font-black text-mimo-400">R$ 39,90</span>
                                 </div>
                                 <button onclick="openProductModal(1)" class="bg-mimo-600 hover:bg-mimo-500 text-white font-bold text-xs px-4 py-2.5 rounded-xl transition shadow-md">
-                                    Ver Detalhes & Personalizar
+                                    Ver & Personalizar
                                 </button>
                             </div>
                         </div>
 
-                        <!-- Mini Solar Card Integration -->
                         <div class="mt-4 bg-sol-500/10 border border-sol-500/30 rounded-2xl p-3 flex items-center justify-between text-xs">
                             <div class="flex items-center gap-2">
                                 <span class="text-xl">☀️</span>
@@ -305,7 +287,7 @@
         </div>
     </section>
 
-    <!-- Trust / Differential Badges Section -->
+    <!-- Trust Badges Section -->
     <section class="bg-slate-900/60 py-10 border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -357,7 +339,6 @@
     <!-- E-Commerce Section (Mimo Store) -->
     <section id="store" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <!-- Store Header & Category Filters -->
         <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4 border-b border-slate-800 pb-6">
             <div>
                 <span class="text-mimo-400 font-extrabold text-xs uppercase tracking-widest block mb-1">🎁 Catálogo Estúdio Mimo</span>
@@ -365,7 +346,6 @@
                 <p class="text-slate-400 text-sm mt-1">Escolha por produto ou navegue pelos temas especiais.</p>
             </div>
 
-            <!-- Filter Tabs -->
             <div id="filterTabs" class="flex flex-wrap gap-2 text-xs font-bold">
                 <button onclick="filterCategory('Todos')" id="tab-Todos" class="px-4 py-2 rounded-xl bg-mimo-600 text-white shadow-md transition">
                     Todos os Produtos
@@ -379,7 +359,6 @@
             </div>
         </div>
 
-        <!-- Secondary Theme Filter Chips -->
         <div class="flex items-center gap-2 overflow-x-auto pb-4 mb-6 text-xs no-scrollbar">
             <span class="text-slate-500 font-bold whitespace-nowrap">Filtrar por Tema:</span>
             <button onclick="filterTheme('Todos')" class="px-3 py-1.5 rounded-lg bg-slate-800/60 text-slate-300 hover:text-white hover:bg-slate-800 border border-slate-700/60 whitespace-nowrap">
@@ -402,18 +381,14 @@
             </button>
         </div>
 
-        <!-- Active Filter Indicator -->
         <div id="activeFilterBadge" class="hidden mb-6 flex items-center gap-2 text-xs text-mimo-300 bg-mimo-950/80 px-4 py-2 rounded-xl border border-mimo-800/60 w-fit">
             <span>Mostrando resultados para: <strong id="activeFilterText">Profissões</strong></span>
             <button onclick="resetFilters()" class="ml-2 font-bold hover:text-white underline">Limpar Filtro ✕</button>
         </div>
 
         <!-- Product Cards Grid -->
-        <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <!-- Dynamic items rendered via JavaScript -->
-        </div>
+        <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
 
-        <!-- Empty State Notice -->
         <div id="emptyState" class="hidden text-center py-16 bg-slate-900/50 rounded-3xl border border-slate-800 my-8">
             <div class="text-5xl mb-3">🔍</div>
             <h3 class="text-xl font-bold text-white">Nenhum presente encontrado</h3>
@@ -424,15 +399,11 @@
         </div>
     </section>
 
-    <!-- Solar Energy Division (Sol Division) -->
+    <!-- Solar Energy Division Section -->
     <section id="solar" class="py-20 relative bg-gradient-to-b from-slate-900 via-slate-950 to-slate-900 border-t border-slate-800 overflow-hidden">
-        
-        <!-- Ambient Warm Lighting -->
         <div class="absolute top-10 right-0 w-96 h-96 bg-sol-500/10 rounded-full filter blur-[140px] pointer-events-none"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            
-            <!-- Solar Section Header -->
             <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
                 <span class="inline-flex items-center gap-2 bg-sol-500/10 border border-sol-500/30 text-sol-400 text-xs font-black uppercase px-4 py-1.5 rounded-full shadow-inner">
                     ☀️ Divisão Solar • Estúdio Sol
@@ -445,10 +416,7 @@
                 </p>
             </div>
 
-            <!-- Solar Calculator Grid -->
             <div class="grid lg:grid-cols-12 gap-8 items-start">
-                
-                <!-- Calculator Controls (Left) -->
                 <div class="lg:col-span-6 bg-slate-900/90 rounded-3xl p-6 sm:p-8 border border-slate-800 shadow-2xl backdrop-blur-xl space-y-6">
                     <div>
                         <label class="block text-sm font-bold text-slate-200 mb-2 flex justify-between items-center">
@@ -456,14 +424,12 @@
                             <span class="text-xs text-sol-400 font-normal">Arraste para ajustar</span>
                         </label>
                         
-                        <!-- Value Display Input -->
                         <div class="relative mb-4">
                             <span class="absolute left-4 top-3 text-xl font-bold text-slate-400">R$</span>
                             <input type="number" id="solarBillInput" value="500" min="100" max="10000" step="50" oninput="updateSolarFromInput()"
                                 class="w-full bg-slate-800 text-white font-black text-2xl pl-12 pr-4 py-2.5 rounded-2xl border border-slate-700 focus:outline-none focus:border-sol-500">
                         </div>
 
-                        <!-- Range Slider -->
                         <input type="range" id="solarRange" min="100" max="5000" step="50" value="500" oninput="updateSolarFromRange()" 
                             class="w-full accent-sol-500 h-2 bg-slate-800 rounded-lg cursor-pointer">
                         
@@ -474,7 +440,6 @@
                         </div>
                     </div>
 
-                    <!-- Additional Details Options -->
                     <div class="grid grid-cols-2 gap-4 pt-2 border-t border-slate-800 text-xs">
                         <div>
                             <label class="block font-bold text-slate-300 mb-1">Tipo de Imóvel</label>
@@ -496,7 +461,6 @@
                         </div>
                     </div>
 
-                    <!-- Dynamic Real-time Calculations Output -->
                     <div class="bg-gradient-to-br from-slate-950 to-slate-900 rounded-2xl p-5 border border-sol-500/20 space-y-4">
                         <div class="grid grid-cols-2 gap-4">
                             <div>
@@ -525,14 +489,12 @@
                         </div>
                     </div>
 
-                    <!-- Lead Action Button -->
                     <button onclick="sendSolarWhatsAppLead()" class="w-full bg-gradient-to-r from-sol-500 via-amber-500 to-sol-600 hover:from-sol-400 hover:to-amber-400 text-slate-950 font-black py-4 rounded-2xl shadow-glow-sol transition transform hover:-translate-y-0.5 flex items-center justify-center gap-2 text-base">
                         <span>📲 Receber Projeto Completo no WhatsApp</span>
                     </button>
                     <p class="text-[11px] text-slate-400 text-center">Sem compromisso! Vistoria técnica gratuita com nossos engenheiros parceiros.</p>
                 </div>
 
-                <!-- Technical Trust Points (Right) -->
                 <div class="lg:col-span-6 space-y-6">
                     <div class="bg-slate-900/60 p-6 sm:p-8 rounded-3xl border border-slate-800 space-y-6">
                         <h3 class="text-2xl font-extrabold text-white">Por que fazer seu projeto com o Estúdio Sol?</h3>
@@ -569,7 +531,6 @@
                             </div>
                         </div>
 
-                        <!-- Testimonial Quote -->
                         <div class="bg-slate-950/80 p-4 rounded-2xl border border-slate-800/80 flex items-center gap-4">
                             <div class="text-3xl">🏠⚡</div>
                             <div class="text-xs">
@@ -581,11 +542,10 @@
                 </div>
 
             </div>
-
         </div>
     </section>
 
-    <!-- Institutional Section (Quem Somos) -->
+    <!-- Institutional Section -->
     <section id="about" class="py-16 bg-slate-950 border-t border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-gradient-to-r from-mimo-950/40 via-slate-900 to-sol-950/40 rounded-3xl p-8 sm:p-12 border border-slate-800 relative overflow-hidden">
@@ -668,49 +628,65 @@
         </div>
     </footer>
 
-  <!-- Modal Visual Display com Área de Pré-visualização em Tempo Real -->
-<div class="relative bg-slate-950 rounded-2xl overflow-hidden border border-slate-800 flex items-center justify-center min-h-[260px]">
-    
-    <!-- Imagem de Fundo (Mockup da Caneca / Camiseta) -->
-    <img id="modalProductImage" src="" alt="Mockup Produto" class="w-full h-64 object-cover">
+    <!-- Interactive Product Detail Modal com Pré-Visualização em Tempo Real (Live Preview) -->
+    <div id="productModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md">
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl relative overflow-y-auto max-h-[90vh]">
+            <button onclick="closeProductModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl p-2 z-10">✕</button>
 
-    <!-- Camada de Texto Personalizado em Tempo Real -->
-    <div id="previewOverlayText" class="absolute text-center font-extrabold text-white text-lg tracking-wide drop-shadow-lg px-4 pointer-events-none transition-all">
-        <!-- O texto do cliente aparecerá aqui -->
-    </div>
+            <div class="grid sm:grid-cols-2 gap-6 items-start">
+                
+                <!-- Área de Pré-Visualização Visual (Live Preview Mockup) -->
+                <div class="space-y-3">
+                    <div class="relative bg-slate-950 rounded-2xl overflow-hidden border border-slate-800 flex items-center justify-center min-h-[240px]">
+                        
+                        <!-- Imagem Base do Mockup -->
+                        <img id="modalProductImage" src="" alt="Mockup Produto" class="w-full h-60 object-cover">
 
-    <!-- Camada de Imagem/Foto Carregada pelo Cliente -->
-    <img id="previewOverlayImage" src="" class="absolute max-w-[35%] max-h-[35%] object-contain rounded-lg border-2 border-dashed border-mimo-500 hidden shadow-xl pointer-events-none">
+                        <!-- Camada de Texto em Tempo Real -->
+                        <div id="previewOverlayText" class="absolute text-center font-black text-white text-sm tracking-wide drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] px-4 pointer-events-none transition-all"></div>
 
-    <span id="modalPackagingBadge" class="absolute top-3 left-3 bg-mimo-600 text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-md">
-        Caixa + Sacola Inclusas
-    </span>
-</div>
+                        <!-- Camada de Foto/Imagem Carregada em Tempo Real -->
+                        <img id="previewOverlayImage" src="" class="absolute max-w-[35%] max-h-[35%] object-contain rounded-lg border-2 border-dashed border-mimo-500 hidden shadow-2xl pointer-events-none">
 
-<!-- Formit de Personalização (Entrada do Cliente) -->
-<div class="space-y-3 pt-2">
-    <div>
-        <label class="block text-xs font-bold text-slate-300 mb-1">✍️ Digite o Nome / Frase para a Estampa:</label>
-        <input type="text" id="customTextInput" oninput="updateLivePreview()" placeholder="Ex: Eng. Silva / 'Melhor Pai do Mundo'"
-            class="w-full bg-slate-800 text-white text-xs px-3 py-2 rounded-xl border border-slate-700 focus:outline-none focus:border-mimo-500">
-    </div>
-
-    <div>
-        <label class="block text-xs font-bold text-slate-300 mb-1">🖼️ Quer adicionar uma Foto? (Opcional):</label>
-        <input type="file" id="customImageInput" accept="image/*" onchange="handleImageUpload(event)"
-            class="w-full text-xs text-slate-400 file:mr-3 file:py-1.5 file:px-3 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-mimo-600 file:text-white hover:file:bg-mimo-500 cursor-pointer">
-    </div>
-</div>
-
-                    <!-- Variant Selection (Mug Type or T-Shirt Size) -->
-                    <div id="modalVariantContainer">
-                        <label id="modalVariantLabel" class="block text-xs font-bold text-slate-300 mb-1.5">Escolha a Variação:</label>
-                        <div id="modalVariantOptions" class="grid grid-cols-3 gap-2 text-xs">
-                            <!-- Dynamic options -->
-                        </div>
+                        <span id="modalPackagingBadge" class="absolute top-3 left-3 bg-mimo-600 text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-md shadow-md">
+                            Caixa + Sacola Inclusas
+                        </span>
                     </div>
 
-                    <!-- Quantity & Price -->
+                    <!-- Caixas de Entrada para Personalização em Tempo Real -->
+                    <div class="bg-slate-950/70 p-3 rounded-2xl border border-slate-800/80 space-y-2">
+                        <div>
+                            <label class="block text-[11px] font-bold text-slate-300 mb-1">✍️ Digite o Nome / Frase para a Estampa:</label>
+                            <input type="text" id="customTextInput" oninput="updateLivePreview()" placeholder="Ex: Eng. Silva / 'Melhor Pai do Mundo'"
+                                class="w-full bg-slate-800 text-white text-xs px-3 py-2 rounded-xl border border-slate-700 focus:outline-none focus:border-mimo-500 transition">
+                        </div>
+
+                        <div>
+                            <label class="block text-[11px] font-bold text-slate-300 mb-1">🖼️ Quer foto na estampa? (Opcional):</label>
+                            <input type="file" id="customImageInput" accept="image/*" onchange="handleImageUpload(event)"
+                                class="w-full text-xs text-slate-400 file:mr-3 file:py-1 file:px-2.5 file:rounded-lg file:border-0 file:text-[11px] file:font-bold file:bg-mimo-600 file:text-white hover:file:bg-mimo-500 cursor-pointer">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Detalhes do Produto & Variações -->
+                <div class="space-y-4">
+                    <div>
+                        <span id="modalProductCategory" class="text-[10px] font-bold text-mimo-400 uppercase tracking-wider block mb-1">Mimo</span>
+                        <h3 id="modalProductTitle" class="text-2xl font-black text-white leading-snug">Título do Produto</h3>
+                        <p id="modalProductDesc" class="text-xs text-slate-400 leading-relaxed mt-1">Descrição detalhada do item.</p>
+                    </div>
+
+                    <div class="bg-purple-950/50 p-3 rounded-xl border border-purple-800/50 text-[11px] text-purple-200 flex items-center gap-2">
+                        <span class="text-base">🎁</span>
+                        <span><strong>Embalagem Pronta:</strong> Caixa kraft especial e sacola com laço prontas para presentear!</span>
+                    </div>
+
+                    <div id="modalVariantContainer">
+                        <label id="modalVariantLabel" class="block text-xs font-bold text-slate-300 mb-1.5">Escolha a Variação:</label>
+                        <div id="modalVariantOptions" class="grid grid-cols-2 gap-2 text-xs"></div>
+                    </div>
+
                     <div class="pt-2 border-t border-slate-800 flex items-center justify-between">
                         <div>
                             <span class="text-[10px] text-slate-400 block uppercase">Preço Total</span>
@@ -724,7 +700,6 @@
                         </div>
                     </div>
 
-                    <!-- Action Button -->
                     <button onclick="addModalItemToCart()" class="w-full bg-mimo-600 hover:bg-mimo-500 text-white font-extrabold py-3.5 rounded-xl shadow-glow-mimo transition">
                         🛒 Adicionar ao Carrinho
                     </button>
@@ -739,7 +714,6 @@
         <div onclick="toggleCartDrawer()" class="absolute inset-0 bg-slate-950/70 backdrop-blur-sm"></div>
         <div class="absolute top-0 right-0 bottom-0 w-full max-w-md bg-slate-900 border-l border-slate-800 p-6 flex flex-col justify-between shadow-2xl z-10">
             
-            <!-- Cart Drawer Header -->
             <div>
                 <div class="flex items-center justify-between pb-4 border-b border-slate-800">
                     <div class="flex items-center gap-2">
@@ -749,12 +723,8 @@
                     <button onclick="toggleCartDrawer()" class="text-slate-400 hover:text-white text-xl p-1">✕</button>
                 </div>
 
-                <!-- Items List -->
-                <div id="cartItemsList" class="mt-4 space-y-3 max-h-[50vh] overflow-y-auto pr-1">
-                    <!-- Dynamic cart items rendered via JS -->
-                </div>
+                <div id="cartItemsList" class="mt-4 space-y-3 max-h-[50vh] overflow-y-auto pr-1"></div>
 
-                <!-- Cart Empty State -->
                 <div id="cartEmptyMsg" class="hidden text-center py-12 space-y-2">
                     <div class="text-4xl">🛍️</div>
                     <p class="text-sm font-bold text-slate-300">Seu carrinho está vazio</p>
@@ -762,10 +732,7 @@
                 </div>
             </div>
 
-            <!-- Cart Drawer Footer Summary & Checkout -->
             <div id="cartSummarySection" class="pt-4 border-t border-slate-800 space-y-3">
-                
-                <!-- Freight Estimator Mock -->
                 <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 text-xs space-y-2">
                     <div class="flex justify-between items-center text-slate-300 font-semibold">
                         <span>🚚 Estimar Frete (CEP):</span>
@@ -809,18 +776,15 @@
     <div id="institutionalModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md">
         <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-xl w-full p-6 sm:p-8 shadow-2xl relative">
             <button onclick="closeInstitutionalModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl">✕</button>
-            
-            <div id="instModalContent" class="space-y-4 text-xs sm:text-sm text-slate-300">
-                <!-- Dynamic Content via JS -->
-            </div>
+            <div id="instModalContent" class="space-y-4 text-xs sm:text-sm text-slate-300"></div>
         </div>
     </div>
 
-    <!-- Toast Notification Container -->
+    <!-- Toast Container -->
     <div id="toastContainer" class="fixed top-24 right-4 z-50 flex flex-col gap-2 pointer-events-none"></div>
 
-    <!-- Floating WhatsApp Action Button with Notification Bubble -->
-    <a href="https://wa.me/5521999999999?text=Olá!%20Vim%20pelo%20site%20Estúdio%20Sol%20%26%20Mimo." target="_blank" 
+    <!-- Floating WhatsApp Action Button -->
+    <a href="https://wa.me/5521965480938?text=Olá!%20Vim%20pelo%20site%20Estúdio%20Sol%20%26%20Mimo." target="_blank" 
         class="fixed bottom-6 right-6 bg-emerald-500 hover:bg-emerald-400 text-white p-4 rounded-full shadow-2xl z-40 flex items-center justify-center transition transform hover:scale-110 group">
         <span class="absolute -top-1 -right-1 bg-rose-500 text-white text-[10px] font-black w-5 h-5 rounded-full flex items-center justify-center border-2 border-slate-950 animate-bounce">1</span>
         <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
@@ -828,182 +792,135 @@
 
     <!-- JavaScript Application Logic -->
     <script>
-        /* Banco de Dados do Catálogo com Imagens de Nicho */
-const PRODUCTS = [
-    {
-        id: 1,
-        title: 'Caneca "Dev Full Stack & Café"',
-        category: 'Canecas',
-        theme: 'Profissões',
-        price: 39.90,
-        image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&auto=format&fit=crop',
-        time: 'Pronta entrega',
-        desc: 'Caneca de cerâmica 325ml para dev com estampa de alta definição.',
-        hasVariants: true,
-        variantType: 'mug',
-        variants: [
-            { name: 'Cerâmica Branca', priceOffset: 0 },
-            { name: 'Polímero Leve', priceOffset: -5.00 },
-            { name: 'Mágica (Muda de Cor)', priceOffset: 10.00 }
-        ]
-    },
-    {
-        id: 2,
-        title: 'Caneca "Melhor Advogado(a)"',
-        category: 'Canecas',
-        theme: 'Profissões',
-        price: 39.90,
-        image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&auto=format&fit=crop',
-        time: '1-2 dias produção',
-        desc: 'Presente sofisticado para profissionais do Direito com caixa e sacola.',
-        hasVariants: true,
-        variantType: 'mug',
-        variants: [
-            { name: 'Cerâmica Branca', priceOffset: 0 },
-            { name: 'Mágica (Preta ao Frio)', priceOffset: 10.00 }
-        ]
-    },
-    {
-        id: 3,
-        title: 'Camiseta "Full Stack Developer"',
-        category: 'Camisetas',
-        theme: 'Geek',
-        price: 59.90,
-        image: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=600&auto=format&fit=crop',
-        time: '1-2 dias produção',
-        desc: '100% Algodão penteado 30.1. Toque macio e estampa durável.',
-        hasVariants: true,
-        variantType: 'tshirt',
-        variants: [
-            { name: 'Tamanho P', priceOffset: 0 },
-            { name: 'Tamanho M', priceOffset: 0 },
-            { name: 'Tamanho G', priceOffset: 0 },
-            { name: 'Tamanho GG', priceOffset: 5.00 }
-        ]
-    },
-    {
-        id: 4,
-        title: 'Caneca Mágica "Amor Eterno"',
-        category: 'Canecas',
-        theme: 'Românticos',
-        price: 49.90,
-        image: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600&auto=format&fit=crop',
-        time: 'Pronta entrega',
-        desc: 'Revela a arte e mensagem especial ao despejar bebida quente.',
-        hasVariants: false
-    },
-    {
-        id: 5,
-        title: 'Caneca "Level 100 Boss Gamer"',
-        category: 'Canecas',
-        theme: 'Geek',
-        price: 39.90,
-        image: 'https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=600&auto=format&fit=crop',
-        time: 'Pronta entrega',
-        desc: 'Para os apaixonados por games. Design exclusivo do Estúdio Mimo.',
-        hasVariants: true,
-        variantType: 'mug',
-        variants: [
-            { name: 'Cerâmica Branca', priceOffset: 0 },
-            { name: 'Polímero Resistente', priceOffset: -5.00 }
-        ]
-    },
-    {
-        id: 6,
-        title: 'Camiseta "Foco no Objetivo"',
-        category: 'Camisetas',
-        theme: 'Profissões',
-        price: 59.90,
-        image: 'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=600&auto=format&fit=crop',
-        time: '1-2 dias produção',
-        desc: 'Minimalista e inspiradora. Tecido respirável e muito confortável.',
-        hasVariants: true,
-        variantType: 'tshirt',
-        variants: [
-            { name: 'Tamanho P', priceOffset: 0 },
-            { name: 'Tamanho M', priceOffset: 0 },
-            { name: 'Tamanho G', priceOffset: 0 },
-            { name: 'Tamanho GG', priceOffset: 5.00 }
-        ]
-    },
-    {
-        id: 7,
-        title: 'Caneca "Camisa 10 do Futebol"',
-        category: 'Canecas',
-        theme: 'Esportes',
-        price: 39.90,
-        image: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=600&auto=format&fit=crop',
-        time: 'Pronta entrega',
-        desc: 'Homenagem para os apaixonados por futebol e pela resenha de fim de semana.',
-        hasVariants: false
-    },
-    {
-        id: 8,
-        title: 'Camiseta "Só Mais Um Episódio"',
-        category: 'Camisetas',
-        theme: 'Séries',
-        price: 59.90,
-        image: 'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=600&auto=format&fit=crop',
-        time: '1-2 dias produção',
-        desc: 'Ideal para maratonar suas séries e filmes preferidos com estilo.',
-        hasVariants: true,
-        variantType: 'tshirt',
-        variants: [
-            { name: 'Tamanho P', priceOffset: 0 },
-            { name: 'Tamanho M', priceOffset: 0 },
-            { name: 'Tamanho G', priceOffset: 0 }
-        ]
-    }
-];
-
-/* Função para renderizar os cards com Foto de Capa */
-function createProductCard(product) {
-    const card = document.createElement('div');
-    card.className = "bg-slate-900 rounded-3xl border border-slate-800 shadow-xl overflow-hidden flex flex-col justify-between hover:border-mimo-500/50 transition duration-300 group";
-    
-    card.innerHTML = `
-        <div>
-            <!-- Área da Imagem do Produto -->
-            <div class="relative bg-slate-950 h-56 overflow-hidden border-b border-slate-800/80">
-                <img src="${product.image}" alt="${product.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                <span class="absolute top-3 left-3 bg-mimo-600/90 text-white text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-lg backdrop-blur-md shadow-md">
-                    🎁 Caixa + Sacola
-                </span>
-                <span class="absolute bottom-3 right-3 text-[10px] text-slate-300 bg-slate-950/80 px-2 py-0.5 rounded-md border border-slate-800 backdrop-blur-sm">
-                    ${product.time}
-                </span>
-            </div>
-
-            <!-- Corpo do Card -->
-            <div class="p-5 space-y-2">
-                <div class="flex items-center gap-2">
-                    <span class="text-[10px] font-extrabold text-mimo-400 bg-mimo-950 px-2 py-0.5 rounded border border-mimo-800/60 uppercase">${product.theme}</span>
-                    <span class="text-[10px] text-slate-500 font-semibold">${product.category}</span>
-                </div>
-                <h3 class="font-bold text-white text-base leading-snug group-hover:text-mimo-300 transition">${product.title}</h3>
-                <p class="text-xs text-slate-400 line-clamp-2">${product.desc}</p>
-            </div>
-        </div>
-
-        <!-- Ação do Card -->
-        <div class="p-5 pt-0">
-            <div class="flex items-center justify-between mb-3 pt-3 border-t border-slate-800/80">
-                <div>
-                    <span class="text-[10px] text-slate-500 block">A partir de</span>
-                    <span class="text-xl font-black text-white">R$ ${product.price.toFixed(2).replace('.', ',')}</span>
-                </div>
-                <span class="text-[10px] text-emerald-400 font-bold bg-emerald-950/80 px-2 py-1 rounded">Embalagem Grátis</span>
-            </div>
-            <button onclick="openProductModal(${product.id})" class="w-full bg-slate-800 hover:bg-mimo-600 text-white font-extrabold text-xs py-3 rounded-xl transition shadow-md flex items-center justify-center gap-1.5">
-                <span>Personalizar & Adicionar</span>
-            </button>
-        </div>
-    `;
-    return card;
-}
+        /* Banco de Dados de Produtos com Fotos de Nichos */
+        const PRODUCTS = [
+            {
+                id: 1,
+                title: 'Caneca "Dev Full Stack & Café"',
+                category: 'Canecas',
+                theme: 'Profissões',
+                price: 39.90,
+                image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&auto=format&fit=crop',
+                time: 'Pronta entrega',
+                desc: 'Caneca de cerâmica 325ml para dev com estampa sublimada em alta resolução.',
+                hasVariants: true,
+                variantType: 'mug',
+                variants: [
+                    { name: 'Cerâmica Branca', priceOffset: 0 },
+                    { name: 'Polímero Leve', priceOffset: -5.00 },
+                    { name: 'Mágica (Muda de Cor)', priceOffset: 10.00 }
+                ]
+            },
+            {
+                id: 2,
+                title: 'Caneca "Melhor Advogado(a)"',
+                category: 'Canecas',
+                theme: 'Profissões',
+                price: 39.90,
+                image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&auto=format&fit=crop',
+                time: '1-2 dias produção',
+                desc: 'Presente sofisticado para profissionais do Direito. Acompanha embalagem decorativa.',
+                hasVariants: true,
+                variantType: 'mug',
+                variants: [
+                    { name: 'Cerâmica Branca', priceOffset: 0 },
+                    { name: 'Mágica (Preta ao Frio)', priceOffset: 10.00 }
+                ]
+            },
+            {
+                id: 3,
+                title: 'Camiseta "Full Stack Developer"',
+                category: 'Camisetas',
+                theme: 'Geek',
+                price: 59.90,
+                image: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=600&auto=format&fit=crop',
+                time: '1-2 dias produção',
+                desc: 'Camiseta 100% Algodão penteado fio 30.1. Toque macio e estampa resistente.',
+                hasVariants: true,
+                variantType: 'tshirt',
+                variants: [
+                    { name: 'Tamanho P', priceOffset: 0 },
+                    { name: 'Tamanho M', priceOffset: 0 },
+                    { name: 'Tamanho G', priceOffset: 0 },
+                    { name: 'Tamanho GG', priceOffset: 5.00 }
+                ]
+            },
+            {
+                id: 4,
+                title: 'Caneca Mágica "Amor Eterno"',
+                category: 'Canecas',
+                theme: 'Românticos',
+                price: 49.90,
+                image: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600&auto=format&fit=crop',
+                time: 'Pronta entrega',
+                desc: 'Revela a frase e arte personalizada ao despejar bebida quente! Surpresa garantida.',
+                hasVariants: false
+            },
+            {
+                id: 5,
+                title: 'Caneca "Level 100 Boss Gamer"',
+                category: 'Canecas',
+                theme: 'Geek',
+                price: 39.90,
+                image: 'https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=600&auto=format&fit=crop',
+                time: 'Pronta entrega',
+                desc: 'Para os apaixonados por video games e setups com estilo. Design exclusivo.',
+                hasVariants: true,
+                variantType: 'mug',
+                variants: [
+                    { name: 'Cerâmica Branca', priceOffset: 0 },
+                    { name: 'Polímero Resistente', priceOffset: -5.00 }
+                ]
+            },
+            {
+                id: 6,
+                title: 'Camiseta "Foco no Objetivo"',
+                category: 'Camisetas',
+                theme: 'Profissões',
+                price: 59.90,
+                image: 'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=600&auto=format&fit=crop',
+                time: '1-2 dias produção',
+                desc: 'Minimalista e inspiradora. Tecido respirável e confortável para o dia a dia.',
+                hasVariants: true,
+                variantType: 'tshirt',
+                variants: [
+                    { name: 'Tamanho P', priceOffset: 0 },
+                    { name: 'Tamanho M', priceOffset: 0 },
+                    { name: 'Tamanho G', priceOffset: 0 },
+                    { name: 'Tamanho GG', priceOffset: 5.00 }
+                ]
+            },
+            {
+                id: 7,
+                title: 'Caneca "Camisa 10 do Futebol"',
+                category: 'Canecas',
+                theme: 'Esportes',
+                price: 39.90,
+                image: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=600&auto=format&fit=crop',
+                time: 'Pronta entrega',
+                desc: 'Homenagem especial para os loucos por futebol e a resenha de fim de semana.',
+                hasVariants: false
+            },
+            {
+                id: 8,
+                title: 'Camiseta "Só Mais Um Episódio"',
+                category: 'Camisetas',
+                theme: 'Séries',
+                price: 59.90,
+                image: 'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=600&auto=format&fit=crop',
+                time: '1-2 dias produção',
+                desc: 'Perfeita para maratonar suas séries e filmes preferidos com estilo e conforto.',
+                hasVariants: true,
+                variantType: 'tshirt',
+                variants: [
+                    { name: 'Tamanho P', priceOffset: 0 },
+                    { name: 'Tamanho M', priceOffset: 0 },
+                    { name: 'Tamanho G', priceOffset: 0 }
+                ]
+            }
         ];
 
-        /* Global Application State */
+        /* Estado Global */
         let state = {
             activeCategory: 'Todos',
             activeTheme: 'Todos',
@@ -1050,18 +967,16 @@ function createProductCard(product) {
             
             card.innerHTML = `
                 <div>
-                    <!-- Card Top Banner Image Area -->
-                    <div class="relative bg-gradient-to-b from-slate-950 to-slate-900 h-56 flex items-center justify-center p-4 border-b border-slate-800/80">
+                    <div class="relative bg-slate-950 h-52 overflow-hidden border-b border-slate-800/80">
+                        <img src="${product.image}" alt="${product.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                         <span class="absolute top-3 left-3 bg-mimo-600/90 text-white text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-lg backdrop-blur-md shadow-md">
                             🎁 Caixa + Sacola
                         </span>
-                        <span class="text-6xl group-hover:scale-110 transition transform duration-300">${product.emoji}</span>
-                        <span class="absolute bottom-3 right-3 text-[10px] text-slate-400 bg-slate-950/80 px-2 py-0.5 rounded-md border border-slate-800">
+                        <span class="absolute bottom-3 right-3 text-[10px] text-slate-300 bg-slate-950/80 px-2 py-0.5 rounded-md border border-slate-800 backdrop-blur-sm">
                             ${product.time}
                         </span>
                     </div>
 
-                    <!-- Card Body -->
                     <div class="p-5 space-y-2">
                         <div class="flex items-center gap-2">
                             <span class="text-[10px] font-extrabold text-mimo-400 bg-mimo-950 px-2 py-0.5 rounded border border-mimo-800/60 uppercase">${product.theme}</span>
@@ -1072,7 +987,6 @@ function createProductCard(product) {
                     </div>
                 </div>
 
-                <!-- Card Footer Action -->
                 <div class="p-5 pt-0">
                     <div class="flex items-center justify-between mb-3 pt-3 border-t border-slate-800/80">
                         <div>
@@ -1089,7 +1003,7 @@ function createProductCard(product) {
             return card;
         }
 
-        /* Filter Controls */
+        /* Controles de Filtro */
         function filterCategory(cat) {
             state.activeCategory = cat;
             document.querySelectorAll('#filterTabs button').forEach(b => {
@@ -1150,6 +1064,7 @@ function createProductCard(product) {
             renderProducts();
         }
 
+        /* Modal & Live Preview Logic */
         function openProductModal(productId) {
             const product = PRODUCTS.find(p => p.id === productId);
             if (!product) return;
@@ -1160,8 +1075,17 @@ function createProductCard(product) {
             document.getElementById('modalProductTitle').innerText = product.title;
             document.getElementById('modalProductDesc').innerText = product.desc;
             document.getElementById('modalProductCategory').innerText = `${product.category} • ${product.theme}`;
-            document.getElementById('modalProductEmoji').innerText = product.emoji;
+            document.getElementById('modalProductImage').src = product.image;
             document.getElementById('modalQtyDisplay').innerText = '1';
+
+            // Reset inputs e preview
+            document.getElementById('customTextInput').value = '';
+            document.getElementById('customImageInput').value = '';
+            document.getElementById('previewOverlayText').innerText = '';
+            
+            const overlayImg = document.getElementById('previewOverlayImage');
+            overlayImg.src = '';
+            overlayImg.classList.add('hidden');
 
             const variantContainer = document.getElementById('modalVariantContainer');
             const variantOptions = document.getElementById('modalVariantOptions');
@@ -1190,6 +1114,29 @@ function createProductCard(product) {
             document.getElementById('productModal').classList.remove('hidden');
         }
 
+        function updateLivePreview() {
+            const textInput = document.getElementById('customTextInput').value;
+            const overlayText = document.getElementById('previewOverlayText');
+            overlayText.innerText = textInput.trim() !== '' ? textInput : '';
+        }
+
+        function handleImageUpload(event) {
+            const file = event.target.files[0];
+            const overlayImg = document.getElementById('previewOverlayImage');
+
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    overlayImg.src = e.target.result;
+                    overlayImg.classList.remove('hidden');
+                };
+                reader.readAsDataURL(file);
+            } else {
+                overlayImg.src = '';
+                overlayImg.classList.add('hidden');
+            }
+        }
+
         function selectModalVariant(variant, btnElement) {
             state.modalSelectedVariant = variant;
             const buttons = document.querySelectorAll('#modalVariantOptions button');
@@ -1214,17 +1161,16 @@ function createProductCard(product) {
             document.getElementById('modalProductPrice').innerText = `R$ ${totalPrice.toFixed(2).replace('.', ',')}`;
         }
 
-        function closeModalProductModal() {
-            document.getElementById('productModal').classList.add('hidden');
-        }
-
         function closeProductModal() {
-            closeModalProductModal();
+            document.getElementById('productModal').classList.add('hidden');
         }
 
         function addModalItemToCart() {
             if (!state.selectedProductForModal) return;
             
+            const customText = document.getElementById('customTextInput').value.trim();
+            const hasCustomImage = document.getElementById('customImageInput').files.length > 0;
+
             let unitPrice = state.selectedProductForModal.price;
             let variantName = 'Padrão';
             if (state.modalSelectedVariant) {
@@ -1236,8 +1182,10 @@ function createProductCard(product) {
                 cartItemId: Date.now(),
                 productId: state.selectedProductForModal.id,
                 title: state.selectedProductForModal.title,
-                emoji: state.selectedProductForModal.emoji,
+                image: state.selectedProductForModal.image,
                 variantName: variantName,
+                customText: customText || 'Padrão da estampa',
+                hasCustomImage: hasCustomImage ? 'Sim (Anexo no WhatsApp)' : 'Não',
                 unitPrice: unitPrice,
                 qty: state.modalQty
             };
@@ -1272,11 +1220,12 @@ function createProductCard(product) {
                     itemEl.className = "bg-slate-950 p-3 rounded-2xl border border-slate-800 flex items-center justify-between gap-3";
                     itemEl.innerHTML = `
                         <div class="flex items-center gap-3">
-                            <span class="text-3xl">${item.emoji}</span>
+                            <img src="${item.image}" class="w-12 h-12 object-cover rounded-xl border border-slate-800">
                             <div>
                                 <h4 class="text-xs font-bold text-white leading-tight">${item.title}</h4>
                                 <span class="text-[10px] text-mimo-400 font-semibold block">${item.variantName}</span>
-                                <span class="text-xs font-black text-slate-200">R$ ${(item.unitPrice * item.qty).toFixed(2).replace('.', ',')}</span>
+                                ${item.customText !== 'Padrão da estampa' ? `<span class="text-[10px] text-slate-400 block">✍️ "${item.customText}"</span>` : ''}
+                                <span class="text-xs font-black text-slate-200 block mt-0.5">R$ ${(item.unitPrice * item.qty).toFixed(2).replace('.', ',')}</span>
                             </div>
                         </div>
                         <div class="flex items-center gap-2">
@@ -1292,7 +1241,6 @@ function createProductCard(product) {
                 });
             }
 
-            // Calculations
             const subtotal = state.cart.reduce((acc, item) => acc + (item.unitPrice * item.qty), 0);
             const total = subtotal + state.estimatedFreight;
 
@@ -1334,6 +1282,7 @@ function createProductCard(product) {
             updateCartUI();
         }
 
+        /* Simulador Solar Logic */
         function updateSolarFromRange() {
             const val = document.getElementById('solarRange').value;
             document.getElementById('solarBillInput').value = val;
@@ -1349,7 +1298,6 @@ function createProductCard(product) {
         function calculateSolar() {
             const bill = parseFloat(document.getElementById('solarBillInput').value) || 0;
             
-            // Average calculation metrics
             const monthlySavings = bill * 0.90;
             const annualSavings = monthlySavings * 12;
             const panelsCount = Math.max(2, Math.ceil(bill / 120));
@@ -1383,8 +1331,7 @@ function createProductCard(product) {
 
         function checkoutViaWhatsApp() {
             if (state.cart.length === 0) return;
-            function sendSolarWhatsAppLead() {
-            ...
+
             const phone = "5521965480938";
             let itemsSummary = "";
             let subtotal = 0;
@@ -1392,7 +1339,9 @@ function createProductCard(product) {
             state.cart.forEach((item, i) => {
                 const totalItem = item.unitPrice * item.qty;
                 subtotal += totalItem;
-                itemsSummary += `${i + 1}. *${item.title}* (${item.variantName}) x${item.qty} - R$ ${totalItem.toFixed(2)}%0A`;
+                itemsSummary += `${i + 1}. *${item.title}* (${item.variantName}) x${item.qty} - R$ ${totalItem.toFixed(2)}%0A` +
+                                `   ✍️ *Texto:* ${item.customText}%0A` +
+                                `   🖼️ *Anexo de Foto:* ${item.hasCustomImage}%0A`;
             });
 
             const totalFinal = subtotal + state.estimatedFreight;
@@ -1473,5 +1422,6 @@ function createProductCard(product) {
     </script>
 </body>
 </html>
+           
    
        
