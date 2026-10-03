@@ -155,7 +155,7 @@
                 </div>
 
                 <a href="#solar" class="text-sol-400 hover:text-sol-500 font-bold flex items-center gap-1.5 bg-sol-500/10 border border-sol-500/30 px-3.5 py-1.5 rounded-full transition shadow-sm hover:shadow-glow-sol">
-                    ☀️️ Energia Solar
+                    ☀️ Energia Solar
                 </a>
             </nav>
 
@@ -237,7 +237,7 @@
                             <span>🎁 Explorar Loja de Presentes</span>
                         </a>
                         <a href="#solar" class="w-full sm:w-auto bg-gradient-to-r from-sol-500 to-amber-600 hover:from-sol-400 hover:to-amber-500 text-slate-950 font-black px-8 py-4 rounded-2xl shadow-glow-sol transition transform hover:-translate-y-1 flex items-center justify-center gap-2">
-                            <span>☀️️ Simular Economia Solar</span>
+                            <span>☀️ Simular Economia Solar</span>
                         </a>
                     </div>
 
@@ -813,7 +813,7 @@
     <div id="toastContainer" class="fixed top-24 right-4 z-50 flex flex-col gap-2 pointer-events-none"></div>
 
     <!-- Floating WhatsApp Action Button with Notification Bubble -->
-    <a href="https://wa.me/5521965480938?text=Olá!%20Vim%20pelo%20site%20Estúdio%20Sol%20%26%20Mimo." target="_blank" 
+    <a href="https://wa.me/5521999999999?text=Olá!%20Vim%20pelo%20site%20Estúdio%20Sol%20%26%20Mimo." target="_blank" 
         class="fixed bottom-6 right-6 bg-emerald-500 hover:bg-emerald-400 text-white p-4 rounded-full shadow-2xl z-40 flex items-center justify-center transition transform hover:scale-110 group">
         <span class="absolute -top-1 -right-1 bg-rose-500 text-white text-[10px] font-black w-5 h-5 rounded-full flex items-center justify-center border-2 border-slate-950 animate-bounce">1</span>
         <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
@@ -821,132 +821,179 @@
 
     <!-- JavaScript Application Logic -->
     <script>
-        /* Product Database */
-        const PRODUCTS = [
-            {
-                id: 1,
-                title: 'Caneca "Dev Full Stack & Café"',
-                category: 'Canecas',
-                theme: 'Profissões',
-                price: 39.90,
-                emoji: '☕',
-                time: 'Pronta entrega',
-                desc: 'Caneca de cerâmica de alta qualidade 325ml. Estampa sublimada em alta definição com cores vibrantes.',
-                hasVariants: true,
-                variantType: 'mug',
-                variants: [
-                    { name: 'Cerâmica Branca', priceOffset: 0 },
-                    { name: 'Polímero Leve', priceOffset: -5.00 },
-                    { name: 'Mágica (Muda de Cor)', priceOffset: 10.00 }
-                ]
-            },
-            {
-                id: 2,
-                title: 'Caneca "Melhor Advogado(a)"',
-                category: 'Canecas',
-                theme: 'Profissões',
-                price: 39.90,
-                emoji: '☕⚖️',
-                time: '1-2 dias produção',
-                desc: 'Presente sofisticado para profissionais do Direito. Acompanha embalagem decorativa completa.',
-                hasVariants: true,
-                variantType: 'mug',
-                variants: [
-                    { name: 'Cerâmica Branca', priceOffset: 0 },
-                    { name: 'Mágica (Preta ao Frio)', priceOffset: 10.00 }
-                ]
-            },
-            {
-                id: 3,
-                title: 'Camiseta "Full Stack Developer"',
-                category: 'Camisetas',
-                theme: 'Geek',
-                price: 59.90,
-                emoji: '👕💻',
-                time: '1-2 dias produção',
-                desc: 'Camiseta 100% Algodão penteado fio 30.1. Toque macio, costura reforçada e estampa durável.',
-                hasVariants: true,
-                variantType: 'tshirt',
-                variants: [
-                    { name: 'Tamanho P', priceOffset: 0 },
-                    { name: 'Tamanho M', priceOffset: 0 },
-                    { name: 'Tamanho G', priceOffset: 0 },
-                    { name: 'Tamanho GG', priceOffset: 5.00 }
-                ]
-            },
-            {
-                id: 4,
-                title: 'Caneca Mágica "Amor Eterno"',
-                category: 'Canecas',
-                theme: 'Românticos',
-                price: 49.90,
-                emoji: '☕❤️',
-                time: 'Pronta entrega',
-                desc: 'Revela a frase e arte personalizada ao despejar bebida quente! O presente surpresa perfeito.',
-                hasVariants: false
-            },
-            {
-                id: 5,
-                title: 'Caneca "Level 100 Boss Gamer"',
-                category: 'Canecas',
-                theme: 'Geek',
-                price: 39.90,
-                emoji: '☕🎮',
-                time: 'Pronta entrega',
-                desc: 'Para os apaixonados por video games. Design exclusivo do Estúdio Mimo.',
-                hasVariants: true,
-                variantType: 'mug',
-                variants: [
-                    { name: 'Cerâmica Branca', priceOffset: 0 },
-                    { name: 'Polímero Resistente', priceOffset: -5.00 }
-                ]
-            },
-            {
-                id: 6,
-                title: 'Camiseta "Foco no Objetivo"',
-                category: 'Camisetas',
-                theme: 'Profissões',
-                price: 59.90,
-                emoji: '👕🎯',
-                time: '1-2 dias produção',
-                desc: 'Minimalista e inspiradora. Tecido respirável e confortável para o dia a dia.',
-                hasVariants: true,
-                variantType: 'tshirt',
-                variants: [
-                    { name: 'Tamanho P', priceOffset: 0 },
-                    { name: 'Tamanho M', priceOffset: 0 },
-                    { name: 'Tamanho G', priceOffset: 0 },
-                    { name: 'Tamanho GG', priceOffset: 5.00 }
-                ]
-            },
-            {
-                id: 7,
-                title: 'Caneca "Camisa 10 do Futebol"',
-                category: 'Canecas',
-                theme: 'Esportes',
-                price: 39.90,
-                emoji: '☕⚽',
-                time: 'Pronta entrega',
-                desc: 'Homenagem especial para os loucos por futebol e pelada com os amigos.',
-                hasVariants: false
-            },
-            {
-                id: 8,
-                title: 'Camiseta "Só Mais Um Episódio"',
-                category: 'Camisetas',
-                theme: 'Séries',
-                price: 59.90,
-                emoji: '👕🎬',
-                time: '1-2 dias produção',
-                desc: 'Perfeita para maratonar suas séries e filmes preferidos com estilo.',
-                hasVariants: true,
-                variantType: 'tshirt',
-                variants: [
-                    { name: 'Tamanho P', priceOffset: 0 },
-                    { name: 'Tamanho M', priceOffset: 0 },
-                    { name: 'Tamanho G', priceOffset: 0 }
-                ]
-            }
+        /* Banco de Dados do Catálogo com Imagens de Nicho */
+const PRODUCTS = [
+    {
+        id: 1,
+        title: 'Caneca "Dev Full Stack & Café"',
+        category: 'Canecas',
+        theme: 'Profissões',
+        price: 39.90,
+        image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&auto=format&fit=crop',
+        time: 'Pronta entrega',
+        desc: 'Caneca de cerâmica 325ml para dev com estampa de alta definição.',
+        hasVariants: true,
+        variantType: 'mug',
+        variants: [
+            { name: 'Cerâmica Branca', priceOffset: 0 },
+            { name: 'Polímero Leve', priceOffset: -5.00 },
+            { name: 'Mágica (Muda de Cor)', priceOffset: 10.00 }
+        ]
+    },
+    {
+        id: 2,
+        title: 'Caneca "Melhor Advogado(a)"',
+        category: 'Canecas',
+        theme: 'Profissões',
+        price: 39.90,
+        image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&auto=format&fit=crop',
+        time: '1-2 dias produção',
+        desc: 'Presente sofisticado para profissionais do Direito com caixa e sacola.',
+        hasVariants: true,
+        variantType: 'mug',
+        variants: [
+            { name: 'Cerâmica Branca', priceOffset: 0 },
+            { name: 'Mágica (Preta ao Frio)', priceOffset: 10.00 }
+        ]
+    },
+    {
+        id: 3,
+        title: 'Camiseta "Full Stack Developer"',
+        category: 'Camisetas',
+        theme: 'Geek',
+        price: 59.90,
+        image: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=600&auto=format&fit=crop',
+        time: '1-2 dias produção',
+        desc: '100% Algodão penteado 30.1. Toque macio e estampa durável.',
+        hasVariants: true,
+        variantType: 'tshirt',
+        variants: [
+            { name: 'Tamanho P', priceOffset: 0 },
+            { name: 'Tamanho M', priceOffset: 0 },
+            { name: 'Tamanho G', priceOffset: 0 },
+            { name: 'Tamanho GG', priceOffset: 5.00 }
+        ]
+    },
+    {
+        id: 4,
+        title: 'Caneca Mágica "Amor Eterno"',
+        category: 'Canecas',
+        theme: 'Românticos',
+        price: 49.90,
+        image: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600&auto=format&fit=crop',
+        time: 'Pronta entrega',
+        desc: 'Revela a arte e mensagem especial ao despejar bebida quente.',
+        hasVariants: false
+    },
+    {
+        id: 5,
+        title: 'Caneca "Level 100 Boss Gamer"',
+        category: 'Canecas',
+        theme: 'Geek',
+        price: 39.90,
+        image: 'https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=600&auto=format&fit=crop',
+        time: 'Pronta entrega',
+        desc: 'Para os apaixonados por games. Design exclusivo do Estúdio Mimo.',
+        hasVariants: true,
+        variantType: 'mug',
+        variants: [
+            { name: 'Cerâmica Branca', priceOffset: 0 },
+            { name: 'Polímero Resistente', priceOffset: -5.00 }
+        ]
+    },
+    {
+        id: 6,
+        title: 'Camiseta "Foco no Objetivo"',
+        category: 'Camisetas',
+        theme: 'Profissões',
+        price: 59.90,
+        image: 'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=600&auto=format&fit=crop',
+        time: '1-2 dias produção',
+        desc: 'Minimalista e inspiradora. Tecido respirável e muito confortável.',
+        hasVariants: true,
+        variantType: 'tshirt',
+        variants: [
+            { name: 'Tamanho P', priceOffset: 0 },
+            { name: 'Tamanho M', priceOffset: 0 },
+            { name: 'Tamanho G', priceOffset: 0 },
+            { name: 'Tamanho GG', priceOffset: 5.00 }
+        ]
+    },
+    {
+        id: 7,
+        title: 'Caneca "Camisa 10 do Futebol"',
+        category: 'Canecas',
+        theme: 'Esportes',
+        price: 39.90,
+        image: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=600&auto=format&fit=crop',
+        time: 'Pronta entrega',
+        desc: 'Homenagem para os apaixonados por futebol e pela resenha de fim de semana.',
+        hasVariants: false
+    },
+    {
+        id: 8,
+        title: 'Camiseta "Só Mais Um Episódio"',
+        category: 'Camisetas',
+        theme: 'Séries',
+        price: 59.90,
+        image: 'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=600&auto=format&fit=crop',
+        time: '1-2 dias produção',
+        desc: 'Ideal para maratonar suas séries e filmes preferidos com estilo.',
+        hasVariants: true,
+        variantType: 'tshirt',
+        variants: [
+            { name: 'Tamanho P', priceOffset: 0 },
+            { name: 'Tamanho M', priceOffset: 0 },
+            { name: 'Tamanho G', priceOffset: 0 }
+        ]
+    }
+];
+
+/* Função para renderizar os cards com Foto de Capa */
+function createProductCard(product) {
+    const card = document.createElement('div');
+    card.className = "bg-slate-900 rounded-3xl border border-slate-800 shadow-xl overflow-hidden flex flex-col justify-between hover:border-mimo-500/50 transition duration-300 group";
+    
+    card.innerHTML = `
+        <div>
+            <!-- Área da Imagem do Produto -->
+            <div class="relative bg-slate-950 h-56 overflow-hidden border-b border-slate-800/80">
+                <img src="${product.image}" alt="${product.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                <span class="absolute top-3 left-3 bg-mimo-600/90 text-white text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-lg backdrop-blur-md shadow-md">
+                    🎁 Caixa + Sacola
+                </span>
+                <span class="absolute bottom-3 right-3 text-[10px] text-slate-300 bg-slate-950/80 px-2 py-0.5 rounded-md border border-slate-800 backdrop-blur-sm">
+                    ${product.time}
+                </span>
+            </div>
+
+            <!-- Corpo do Card -->
+            <div class="p-5 space-y-2">
+                <div class="flex items-center gap-2">
+                    <span class="text-[10px] font-extrabold text-mimo-400 bg-mimo-950 px-2 py-0.5 rounded border border-mimo-800/60 uppercase">${product.theme}</span>
+                    <span class="text-[10px] text-slate-500 font-semibold">${product.category}</span>
+                </div>
+                <h3 class="font-bold text-white text-base leading-snug group-hover:text-mimo-300 transition">${product.title}</h3>
+                <p class="text-xs text-slate-400 line-clamp-2">${product.desc}</p>
+            </div>
+        </div>
+
+        <!-- Ação do Card -->
+        <div class="p-5 pt-0">
+            <div class="flex items-center justify-between mb-3 pt-3 border-t border-slate-800/80">
+                <div>
+                    <span class="text-[10px] text-slate-500 block">A partir de</span>
+                    <span class="text-xl font-black text-white">R$ ${product.price.toFixed(2).replace('.', ',')}</span>
+                </div>
+                <span class="text-[10px] text-emerald-400 font-bold bg-emerald-950/80 px-2 py-1 rounded">Embalagem Grátis</span>
+            </div>
+            <button onclick="openProductModal(${product.id})" class="w-full bg-slate-800 hover:bg-mimo-600 text-white font-extrabold text-xs py-3 rounded-xl transition shadow-md flex items-center justify-center gap-1.5">
+                <span>Personalizar & Adicionar</span>
+            </button>
+        </div>
+    `;
+    return card;
+}
         ];
 
         /* Global Application State */
@@ -1329,7 +1376,8 @@
 
         function checkoutViaWhatsApp() {
             if (state.cart.length === 0) return;
-
+            function sendSolarWhatsAppLead() {
+            ...
             const phone = "5521965480938";
             let itemsSummary = "";
             let subtotal = 0;
@@ -1418,6 +1466,5 @@
     </script>
 </body>
 </html>
-
    
        
