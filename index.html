@@ -668,32 +668,39 @@
         </div>
     </footer>
 
-    <!-- Interactive Product Detail Modal -->
-    <div id="productModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md">
-        <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl relative overflow-y-auto max-h-[90vh]">
-            <button onclick="closeProductModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl p-2">✕</button>
+  <!-- Modal Visual Display com Área de Pré-visualização em Tempo Real -->
+<div class="relative bg-slate-950 rounded-2xl overflow-hidden border border-slate-800 flex items-center justify-center min-h-[260px]">
+    
+    <!-- Imagem de Fundo (Mockup da Caneca / Camiseta) -->
+    <img id="modalProductImage" src="" alt="Mockup Produto" class="w-full h-64 object-cover">
 
-            <div class="grid sm:grid-cols-2 gap-6 items-center">
-                
-                <!-- Modal Product Visual Display -->
-                <div class="bg-slate-950 rounded-2xl p-8 text-center border border-slate-800 relative flex flex-col items-center justify-center min-h-[220px]">
-                    <span id="modalPackagingBadge" class="absolute top-3 left-3 bg-mimo-600 text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-md">
-                        Caixa + Sacola Inclusas
-                    </span>
-                    <div id="modalProductEmoji" class="text-7xl my-2">☕</div>
-                    <span id="modalProductCategory" class="text-[11px] font-bold text-mimo-400 uppercase tracking-wider">Mimo</span>
-                </div>
+    <!-- Camada de Texto Personalizado em Tempo Real -->
+    <div id="previewOverlayText" class="absolute text-center font-extrabold text-white text-lg tracking-wide drop-shadow-lg px-4 pointer-events-none transition-all">
+        <!-- O texto do cliente aparecerá aqui -->
+    </div>
 
-                <!-- Modal Product Form & Details -->
-                <div class="space-y-4">
-                    <h3 id="modalProductTitle" class="text-2xl font-black text-white leading-snug">Título do Produto</h3>
-                    <p id="modalProductDesc" class="text-xs text-slate-400 leading-relaxed">Descrição detalhada do item.</p>
+    <!-- Camada de Imagem/Foto Carregada pelo Cliente -->
+    <img id="previewOverlayImage" src="" class="absolute max-w-[35%] max-h-[35%] object-contain rounded-lg border-2 border-dashed border-mimo-500 hidden shadow-xl pointer-events-none">
 
-                    <!-- Packaging Highlight Callout -->
-                    <div class="bg-purple-950/50 p-3 rounded-xl border border-purple-800/50 text-[11px] text-purple-200 flex items-center gap-2">
-                        <span class="text-base">🎁</span>
-                        <span><strong>Embalagem Especial:</strong> Já vai na caixinha kraft exclusiva e sacola especial para presentear na hora!</span>
-                    </div>
+    <span id="modalPackagingBadge" class="absolute top-3 left-3 bg-mimo-600 text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-md">
+        Caixa + Sacola Inclusas
+    </span>
+</div>
+
+<!-- Formit de Personalização (Entrada do Cliente) -->
+<div class="space-y-3 pt-2">
+    <div>
+        <label class="block text-xs font-bold text-slate-300 mb-1">✍️ Digite o Nome / Frase para a Estampa:</label>
+        <input type="text" id="customTextInput" oninput="updateLivePreview()" placeholder="Ex: Eng. Silva / 'Melhor Pai do Mundo'"
+            class="w-full bg-slate-800 text-white text-xs px-3 py-2 rounded-xl border border-slate-700 focus:outline-none focus:border-mimo-500">
+    </div>
+
+    <div>
+        <label class="block text-xs font-bold text-slate-300 mb-1">🖼️ Quer adicionar uma Foto? (Opcional):</label>
+        <input type="file" id="customImageInput" accept="image/*" onchange="handleImageUpload(event)"
+            class="w-full text-xs text-slate-400 file:mr-3 file:py-1.5 file:px-3 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-mimo-600 file:text-white hover:file:bg-mimo-500 cursor-pointer">
+    </div>
+</div>
 
                     <!-- Variant Selection (Mug Type or T-Shirt Size) -->
                     <div id="modalVariantContainer">
