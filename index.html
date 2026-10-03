@@ -50,34 +50,20 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Cinzel:wght@700&family=Inter:wght@400;600;800;900&family=Montserrat:wght@800&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
     
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        .badge-pulse {
-            animation: pulse-border 2s infinite;
-        }
+        body { font-family: 'Inter', sans-serif; }
+        .badge-pulse { animation: pulse-border 2s infinite; }
         @keyframes pulse-border {
             0% { box-shadow: 0 0 0 0 rgba(168, 85, 247, 0.6); }
             70% { box-shadow: 0 0 0 10px rgba(168, 85, 247, 0); }
             100% { box-shadow: 0 0 0 0 rgba(168, 85, 247, 0); }
         }
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0f172a;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #475569;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #9333ea;
-        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #475569; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #9333ea; }
     </style>
 </head>
 <body class="bg-slate-950 text-slate-100 antialiased selection:bg-mimo-500 selection:text-white min-h-screen flex flex-col">
@@ -116,9 +102,7 @@
                 <svg class="w-5 h-5 text-slate-400 absolute left-3 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
                 </svg>
-                <button id="clearSearchBtn" onclick="clearSearch()" class="hidden absolute right-3 top-2.5 text-slate-400 hover:text-white">
-                    ✕
-                </button>
+                <button id="clearSearchBtn" onclick="clearSearch()" class="hidden absolute right-3 top-2.5 text-slate-400 hover:text-white">✕</button>
             </div>
 
             <!-- Navigation Links -->
@@ -127,7 +111,6 @@
                 <a href="#store" onclick="filterCategory('Canecas')" class="hover:text-mimo-500 transition flex items-center gap-1">☕ Canecas</a>
                 <a href="#store" onclick="filterCategory('Camisetas')" class="hover:text-mimo-500 transition flex items-center gap-1">👕 Camisetas</a>
                 
-                <!-- Category Dropdown -->
                 <div class="relative group cursor-pointer py-2">
                     <button class="hover:text-mimo-500 transition flex items-center gap-1">
                         🎨 Por Tema
@@ -149,9 +132,7 @@
                 </a>
             </nav>
 
-            <!-- Actions: Cart & Mobile Menu Button -->
             <div class="flex items-center gap-3">
-                <!-- Cart Button -->
                 <button onclick="toggleCartDrawer()" class="relative bg-slate-800 hover:bg-slate-700 text-slate-200 p-2.5 rounded-xl border border-slate-700 transition flex items-center gap-2 group">
                     <svg class="w-6 h-6 group-hover:scale-110 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
@@ -159,7 +140,6 @@
                     <span id="cartCountBadge" class="bg-mimo-600 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">0</span>
                 </button>
 
-                <!-- Mobile Menu Toggle Button -->
                 <button onclick="toggleMobileMenu()" class="md:hidden text-slate-300 hover:text-white p-2">
                     <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
@@ -168,7 +148,6 @@
             </div>
         </div>
 
-        <!-- Mobile Navigation Menu Dropdown -->
         <div id="mobileMenu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
             <div class="relative mb-3">
                 <input type="text" id="mobileSearchInput" onkeyup="handleMobileSearch()" placeholder="Buscar produtos..." 
@@ -246,7 +225,6 @@
 
                 <div class="lg:col-span-5 relative flex justify-center">
                     <div class="relative w-full max-w-md bg-slate-900/90 rounded-3xl p-6 border border-slate-800 shadow-2xl backdrop-blur-xl">
-                        
                         <div class="absolute -top-4 -right-4 bg-gradient-to-r from-mimo-600 to-roseGift-500 text-white font-black text-xs px-4 py-2 rounded-2xl shadow-lg flex items-center gap-1.5 badge-pulse z-10">
                             <span>🎁 CAIXA KRAFT + SACOLA INCLUSAS</span>
                         </div>
@@ -264,8 +242,8 @@
                                     <span class="text-xs text-slate-400 block text-left">Preço do Mimo</span>
                                     <span class="text-xl font-black text-mimo-400">R$ 39,90</span>
                                 </div>
-                                <button onclick="openProductModal(1)" class="bg-mimo-600 hover:bg-mimo-500 text-white font-bold text-xs px-4 py-2.5 rounded-xl transition shadow-md">
-                                    Ver & Personalizar
+                                <button type="button" onclick="openProductModal(1)" class="bg-mimo-600 hover:bg-mimo-500 text-white font-bold text-xs px-4 py-2.5 rounded-xl transition shadow-md">
+                                    Simular & Personalizar
                                 </button>
                             </div>
                         </div>
@@ -287,58 +265,8 @@
         </div>
     </section>
 
-    <!-- Trust Badges Section -->
-    <section class="bg-slate-900/60 py-10 border-b border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                
-                <div class="flex items-center gap-4 p-4 rounded-2xl bg-slate-900/80 border border-slate-800/80 shadow-sm">
-                    <div class="w-12 h-12 rounded-xl bg-mimo-500/20 text-mimo-400 flex items-center justify-center text-2xl font-bold flex-shrink-0">
-                        🎁
-                    </div>
-                    <div>
-                        <h4 class="text-sm font-bold text-white">Pronto para Entregar</h4>
-                        <p class="text-xs text-slate-400 mt-0.5">Todas as canecas/camisetas com caixinha e sacola inclusas.</p>
-                    </div>
-                </div>
-
-                <div class="flex items-center gap-4 p-4 rounded-2xl bg-slate-900/80 border border-slate-800/80 shadow-sm">
-                    <div class="w-12 h-12 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-2xl font-bold flex-shrink-0">
-                        🎨
-                    </div>
-                    <div>
-                        <h4 class="text-sm font-bold text-white">Impressão HD Indestrutível</h4>
-                        <p class="text-xs text-slate-400 mt-0.5">Pode ir ao micro-ondas e lava-louças sem perder o brilho.</p>
-                    </div>
-                </div>
-
-                <div class="flex items-center gap-4 p-4 rounded-2xl bg-slate-900/80 border border-slate-800/80 shadow-sm">
-                    <div class="w-12 h-12 rounded-xl bg-sol-500/20 text-sol-400 flex items-center justify-center text-2xl font-bold flex-shrink-0">
-                        ☀️
-                    </div>
-                    <div>
-                        <h4 class="text-sm font-bold text-white">Energia Solar Integrada</h4>
-                        <p class="text-xs text-slate-400 mt-0.5">Parceria técnica para economizar até 95% na conta de luz.</p>
-                    </div>
-                </div>
-
-                <div class="flex items-center gap-4 p-4 rounded-2xl bg-slate-900/80 border border-slate-800/80 shadow-sm">
-                    <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-2xl font-bold flex-shrink-0">
-                        💬
-                    </div>
-                    <div>
-                        <h4 class="text-sm font-bold text-white">Suporte Rápido WhatsApp</h4>
-                        <p class="text-xs text-slate-400 mt-0.5">Tire dúvidas antes de comprar direto com nosso estúdio.</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- E-Commerce Section (Mimo Store) -->
+    <!-- E-Commerce Section -->
     <section id="store" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
         <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4 border-b border-slate-800 pb-6">
             <div>
                 <span class="text-mimo-400 font-extrabold text-xs uppercase tracking-widest block mb-1">🎁 Catálogo Estúdio Mimo</span>
@@ -386,7 +314,6 @@
             <button onclick="resetFilters()" class="ml-2 font-bold hover:text-white underline">Limpar Filtro ✕</button>
         </div>
 
-        <!-- Product Cards Grid -->
         <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
 
         <div id="emptyState" class="hidden text-center py-16 bg-slate-900/50 rounded-3xl border border-slate-800 my-8">
@@ -399,10 +326,105 @@
         </div>
     </section>
 
-    <!-- Solar Energy Division Section -->
-    <section id="solar" class="py-20 relative bg-gradient-to-b from-slate-900 via-slate-950 to-slate-900 border-t border-slate-800 overflow-hidden">
-        <div class="absolute top-10 right-0 w-96 h-96 bg-sol-500/10 rounded-full filter blur-[140px] pointer-events-none"></div>
+    <!-- Interactive Customizer Modal (Com HTML5 Canvas) -->
+    <div id="productModal" onclick="if(event.target === this) closeProductModal()" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-slate-950/85 backdrop-blur-md">
+        <div onclick="event.stopPropagation()" class="bg-slate-900 border border-slate-800 rounded-3xl max-w-3xl w-full p-6 sm:p-8 shadow-2xl relative overflow-y-auto max-h-[92vh]">
+            <button type="button" onclick="closeProductModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl p-2 z-20">✕</button>
 
+            <div class="grid md:grid-cols-12 gap-6 items-start">
+                
+                <!-- Visor do Canvas Interativo (Lado Esquerdo - 6 cols) -->
+                <div class="md:col-span-6 space-y-3">
+                    <div class="relative bg-slate-950 rounded-2xl overflow-hidden border border-slate-800 flex items-center justify-center min-h-[260px] p-2 shadow-inner">
+                        <canvas id="previewCanvas" width="400" height="320" class="w-full h-auto rounded-xl shadow-lg border border-slate-800/80 bg-slate-900"></canvas>
+
+                        <span id="modalPackagingBadge" class="absolute top-4 left-4 bg-mimo-600 text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-md shadow-md pointer-events-none">
+                            🎁 Caixa + Sacola Inclusas
+                        </span>
+                    </div>
+
+                    <div class="text-[11px] text-slate-400 text-center flex items-center justify-center gap-1">
+                        <span>✨ Pré-visualização em tempo real da estampa final</span>
+                    </div>
+                </div>
+
+                <!-- Painel de Controles e Personalização (Lado Direito - 6 cols) -->
+                <div class="md:col-span-6 space-y-4">
+                    <div>
+                        <span id="modalProductCategory" class="text-[10px] font-bold text-mimo-400 uppercase tracking-wider block mb-0.5">Mimo</span>
+                        <h3 id="modalProductTitle" class="text-xl font-black text-white leading-snug">Título do Produto</h3>
+                    </div>
+
+                    <!-- Controles de Edição da Estampa -->
+                    <div class="bg-slate-950/80 p-3.5 rounded-2xl border border-slate-800 space-y-3">
+                        <span class="text-xs font-bold text-sol-400 block border-b border-slate-800 pb-1">🎨 Personalize a sua Estampa:</span>
+                        
+                        <div>
+                            <label class="block text-[11px] font-bold text-slate-300 mb-1">✍️ Texto / Nome Personalizado:</label>
+                            <input type="text" id="customTextInput" oninput="renderCanvasPreview()" placeholder="Ex: Dr. Ataíde / 'Melhor Pai'"
+                                class="w-full bg-slate-800 text-white text-xs px-3 py-2 rounded-xl border border-slate-700 focus:outline-none focus:border-mimo-500 transition">
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-2 text-xs">
+                            <div>
+                                <label class="block text-[10px] font-bold text-slate-400 mb-1">Estilo da Fonte:</label>
+                                <select id="customFontSelect" onchange="renderCanvasPreview()" class="w-full bg-slate-800 text-slate-200 text-xs p-2 rounded-xl border border-slate-700 focus:outline-none">
+                                    <option value="Georgia">Sérifada Clássica</option>
+                                    <option value="Cinzel">Cinzel Dourada</option>
+                                    <option value="Caveat">Manuscrita / Cursiva</option>
+                                    <option value="Montserrat">Moderna Relevo</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-[10px] font-bold text-slate-400 mb-1">Cor do Texto:</label>
+                                <select id="customColorSelect" onchange="renderCanvasPreview()" class="w-full bg-slate-800 text-slate-200 text-xs p-2 rounded-xl border border-slate-700 focus:outline-none">
+                                    <option value="#F59E0B">🟡 Dourado Sol</option>
+                                    <option value="#FFFFFF">⚪ Branco Puro</option>
+                                    <option value="#F43F5E">🔴 Rosa / Vermelho</option>
+                                    <option value="#38BDF8">🔵 Azul Céu</option>
+                                    <option value="#000000">⬛ Preto Clássico</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-[11px] font-bold text-slate-300 mb-1">🖼️ Carregar Foto/Imagem na Estampa:</label>
+                            <input type="file" id="customImageInput" accept="image/*" onchange="handleImageUpload(event)"
+                                class="w-full text-xs text-slate-400 file:mr-2 file:py-1 file:px-2.5 file:rounded-lg file:border-0 file:text-[11px] file:font-bold file:bg-mimo-600 file:text-white hover:file:bg-mimo-500 cursor-pointer">
+                        </div>
+                    </div>
+
+                    <!-- Variações de Tamanho / Material -->
+                    <div id="modalVariantContainer">
+                        <label id="modalVariantLabel" class="block text-xs font-bold text-slate-300 mb-1">Escolha a Variação:</label>
+                        <div id="modalVariantOptions" class="grid grid-cols-2 gap-2 text-xs"></div>
+                    </div>
+
+                    <!-- Preço e Adição ao Carrinho -->
+                    <div class="pt-2 border-t border-slate-800 flex items-center justify-between">
+                        <div>
+                            <span class="text-[10px] text-slate-400 block uppercase">Preço Total</span>
+                            <span id="modalProductPrice" class="text-2xl font-black text-mimo-400">R$ 39,90</span>
+                        </div>
+
+                        <div class="flex items-center gap-2 bg-slate-800 p-1 rounded-xl border border-slate-700">
+                            <button type="button" onclick="changeModalQty(-1)" class="w-8 h-8 font-bold text-slate-300 hover:text-white flex items-center justify-center">-</button>
+                            <span id="modalQtyDisplay" class="font-bold text-sm w-6 text-center">1</span>
+                            <button type="button" onclick="changeModalQty(1)" class="w-8 h-8 font-bold text-slate-300 hover:text-white flex items-center justify-center">+</button>
+                        </div>
+                    </div>
+
+                    <button type="button" onclick="addModalItemToCart()" class="w-full bg-mimo-600 hover:bg-mimo-500 text-white font-extrabold py-3.5 rounded-xl shadow-glow-mimo transition flex items-center justify-center gap-2">
+                        <span>🛒 Confirmar e Adicionar ao Carrinho</span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Solar Energy Section -->
+    <section id="solar" class="py-20 relative bg-gradient-to-b from-slate-900 via-slate-950 to-slate-900 border-t border-slate-800 overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
                 <span class="inline-flex items-center gap-2 bg-sol-500/10 border border-sol-500/30 text-sol-400 text-xs font-black uppercase px-4 py-1.5 rounded-full shadow-inner">
@@ -432,18 +454,12 @@
 
                         <input type="range" id="solarRange" min="100" max="5000" step="50" value="500" oninput="updateSolarFromRange()" 
                             class="w-full accent-sol-500 h-2 bg-slate-800 rounded-lg cursor-pointer">
-                        
-                        <div class="flex justify-between text-[11px] text-slate-500 font-semibold mt-1">
-                            <span>R$ 100</span>
-                            <span>R$ 2.500</span>
-                            <span>R$ 5.000+</span>
-                        </div>
                     </div>
 
                     <div class="grid grid-cols-2 gap-4 pt-2 border-t border-slate-800 text-xs">
                         <div>
                             <label class="block font-bold text-slate-300 mb-1">Tipo de Imóvel</label>
-                            <select id="propertyType" onchange="calculateSolar()" class="w-full bg-slate-800 text-slate-200 p-2.5 rounded-xl border border-slate-700 focus:outline-none">
+                            <select id="propertyType" onchange="calculateSolar()" class="w-full bg-slate-800 text-slate-200 p-2.5 rounded-xl border border-slate-700">
                                 <option value="Residencial">Residencial</option>
                                 <option value="Comercial">Comercial / Empresa</option>
                                 <option value="Rural">Chácara / Rural</option>
@@ -451,7 +467,7 @@
                         </div>
                         <div>
                             <label class="block font-bold text-slate-300 mb-1">Estado (Região)</label>
-                            <select id="stateSelect" onchange="calculateSolar()" class="w-full bg-slate-800 text-slate-200 p-2.5 rounded-xl border border-slate-700 focus:outline-none">
+                            <select id="stateSelect" onchange="calculateSolar()" class="w-full bg-slate-800 text-slate-200 p-2.5 rounded-xl border border-slate-700">
                                 <option value="RJ">Rio de Janeiro (RJ)</option>
                                 <option value="SP">São Paulo (SP)</option>
                                 <option value="MG">Minas Gerais (MG)</option>
@@ -472,255 +488,34 @@
                                 <span id="resAnnualSavings" class="text-2xl font-black text-amber-300">R$ 5.400,00</span>
                             </div>
                         </div>
-
-                        <div class="grid grid-cols-3 gap-2 pt-3 border-t border-slate-800/80 text-center">
-                            <div class="bg-slate-900/80 p-2 rounded-xl">
-                                <span class="text-[10px] text-slate-400 block">Painéis Est.</span>
-                                <span id="resPanels" class="text-sm font-extrabold text-white">4 Placas</span>
-                            </div>
-                            <div class="bg-slate-900/80 p-2 rounded-xl">
-                                <span class="text-[10px] text-slate-400 block">Retorno Est.</span>
-                                <span id="resPayback" class="text-sm font-extrabold text-white">~3.2 Anos</span>
-                            </div>
-                            <div class="bg-slate-900/80 p-2 rounded-xl">
-                                <span class="text-[10px] text-slate-400 block">Árvores/Ano 🌳</span>
-                                <span id="resTrees" class="text-sm font-extrabold text-emerald-400">~27 Árvores</span>
-                            </div>
-                        </div>
                     </div>
 
-                    <button onclick="sendSolarWhatsAppLead()" class="w-full bg-gradient-to-r from-sol-500 via-amber-500 to-sol-600 hover:from-sol-400 hover:to-amber-400 text-slate-950 font-black py-4 rounded-2xl shadow-glow-sol transition transform hover:-translate-y-0.5 flex items-center justify-center gap-2 text-base">
+                    <button onclick="sendSolarWhatsAppLead()" class="w-full bg-gradient-to-r from-sol-500 via-amber-500 to-sol-600 hover:from-sol-400 text-slate-950 font-black py-4 rounded-2xl shadow-glow-sol transition flex items-center justify-center gap-2">
                         <span>📲 Receber Projeto Completo no WhatsApp</span>
                     </button>
-                    <p class="text-[11px] text-slate-400 text-center">Sem compromisso! Vistoria técnica gratuita com nossos engenheiros parceiros.</p>
                 </div>
 
                 <div class="lg:col-span-6 space-y-6">
                     <div class="bg-slate-900/60 p-6 sm:p-8 rounded-3xl border border-slate-800 space-y-6">
                         <h3 class="text-2xl font-extrabold text-white">Por que fazer seu projeto com o Estúdio Sol?</h3>
-                        
-                        <div class="space-y-4 text-sm">
-                            <div class="flex items-start gap-3">
-                                <div class="w-8 h-8 rounded-lg bg-sol-500/20 text-sol-400 flex items-center justify-center font-bold text-base flex-shrink-0 mt-0.5">
-                                    ✓
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-white">Equipamentos Tier-1 com 25 Anos de Garantia</h4>
-                                    <p class="text-slate-400 text-xs mt-0.5">Inversores e módulos fotovoltaicos de altíssima eficiência testados e homologados pelo Inmetro.</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start gap-3">
-                                <div class="w-8 h-8 rounded-lg bg-sol-500/20 text-sol-400 flex items-center justify-center font-bold text-base flex-shrink-0 mt-0.5">
-                                    ✓
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-white">Projeto Turnkey (Chave na Mão)</h4>
-                                    <p class="text-slate-400 text-xs mt-0.5">Cuidamos de tudo: Engenharia, projeto legal na concessionária de luz, instalação física e homologação.</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start gap-3">
-                                <div class="w-8 h-8 rounded-lg bg-sol-500/20 text-sol-400 flex items-center justify-center font-bold text-base flex-shrink-0 mt-0.5">
-                                    ✓
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-white">Financiamento Solar Sem Entrada</h4>
-                                    <p class="text-slate-400 text-xs mt-0.5">Troque o valor da sua conta de luz pela parcela do seu próprio sistema solar em até 84x.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bg-slate-950/80 p-4 rounded-2xl border border-slate-800/80 flex items-center gap-4">
-                            <div class="text-3xl">🏠⚡</div>
-                            <div class="text-xs">
-                                <p class="text-slate-200 italic font-medium">"Minha conta caiu de R$ 780 para apenas a taxa mínima de R$ 65! O atendimento do Estúdio Sol foi impecável."</p>
-                                <span class="text-sol-400 font-bold block mt-1">— Carlos M., Cliente Residencial</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Institutional Section -->
-    <section id="about" class="py-16 bg-slate-950 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-gradient-to-r from-mimo-950/40 via-slate-900 to-sol-950/40 rounded-3xl p-8 sm:p-12 border border-slate-800 relative overflow-hidden">
-                <div class="grid md:grid-cols-12 gap-8 items-center">
-                    <div class="md:col-span-8 space-y-4">
-                        <span class="text-xs font-bold uppercase tracking-widest text-mimo-400">Nossa História & Propósito</span>
-                        <h2 class="text-3xl font-black text-white">A União Perfeita entre Carinho & Sustentabilidade</h2>
-                        <p class="text-slate-300 text-sm leading-relaxed">
-                            O <strong>Estúdio Sol & Mimo</strong> nasceu da união de duas grandes paixões: criar momentos inesquecíveis através de presentes altamente personalizados (Mimo) e promover economia inteligente para lares e negócios por meio de energia renovável (Sol).
-                        </p>
-                        <p class="text-slate-400 text-xs leading-relaxed">
-                            Não vendemos apenas canecas ou camisetas — vendemos o sorriso de quem recebe um presente embalado com perfeição. Da mesma forma, não vendemos apenas painéis solares — entregamos liberdade financeira contra os aumentos na conta de luz.
-                        </p>
-                        <div class="flex flex-wrap gap-4 pt-2">
-                            <button onclick="openInstitutionalModal('embalagens')" class="text-xs font-bold text-mimo-400 hover:text-mimo-300 underline">
-                                🎁 Como funcionam as Embalagens
-                            </button>
-                            <button onclick="openInstitutionalModal('trocas')" class="text-xs font-bold text-slate-300 hover:text-white underline">
-                                🔄 Políticas de Troca e Garantia
-                            </button>
-                        </div>
-                    </div>
-                    <div class="md:col-span-4 text-center">
-                        <div class="w-32 h-32 mx-auto rounded-3xl bg-gradient-to-tr from-mimo-600 via-purple-500 to-sol-500 p-1 shadow-2xl flex items-center justify-center text-5xl">
-                            🎁☀️
-                        </div>
-                        <span class="block mt-3 text-xs font-bold text-slate-300">Estúdio Sol & Mimo</span>
-                        <span class="text-[10px] text-slate-500">Inovação, Design & Soluções</span>
+                        <p class="text-slate-300 text-sm">Oferecemos homologação rápida na concessionária, equipamentos Tier-1 com 25 anos de garantia e financiamento solar sem entrada.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-slate-950 border-t border-slate-800 text-slate-400 text-xs py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div class="space-y-3">
-                <span class="font-extrabold text-base text-white block">Estúdio Sol & Mimo</span>
-                <p class="leading-relaxed">
-                    Presentes que emocionam com embalagem inclusa e soluções em Energia Solar para sua casa ou empresa.
-                </p>
-                <div class="text-[11px] text-slate-500">
-                    Atendimento de Segunda a Sábado: 08h às 19h
-                </div>
-            </div>
-
-            <div>
-                <h4 class="text-white font-bold mb-3 uppercase tracking-wider text-[11px]">Presentes por Categoria</h4>
-                <ul class="space-y-2">
-                    <li><a href="#store" onclick="filterCategory('Canecas')" class="hover:text-mimo-400 transition">Canecas Personalizadas</a></li>
-                    <li><a href="#store" onclick="filterCategory('Camisetas')" class="hover:text-mimo-400 transition">Camisetas de Nicho</a></li>
-                    <li><a href="#store" onclick="filterTheme('Profissões')" class="hover:text-mimo-400 transition">Linha Profissões</a></li>
-                    <li><a href="#store" onclick="filterTheme('Geek')" class="hover:text-mimo-400 transition">Coleção Geek & Gamer</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h4 class="text-white font-bold mb-3 uppercase tracking-wider text-[11px]">Institucional & Ajuda</h4>
-                <ul class="space-y-2">
-                    <li><button onclick="openInstitutionalModal('quemSomos')" class="hover:text-white transition">Quem Somos</button></li>
-                    <li><button onclick="openInstitutionalModal('embalagens')" class="hover:text-white transition">Garantia & Embalagens</button></li>
-                    <li><button onclick="openInstitutionalModal('trocas')" class="hover:text-white transition">Políticas de Troca</button></li>
-                    <li><a href="#solar" class="hover:text-sol-400 transition">Simulador Solar</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h4 class="text-white font-bold mb-3 uppercase tracking-wider text-[11px]">Contato Direct</h4>
-                <p class="mb-3">Dúvidas sobre personalizados ou energia solar? Fale no WhatsApp:</p>
-                <a href="https://wa.me/5521965480938?text=Olá!%20Gostaria%20de%20tirar%20uma%20dúvida." target="_blank" 
-                    class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-4 py-2.5 rounded-xl transition shadow-md">
-                    <span>💬 WhatsApp Estúdio</span>
-                </a>
-            </div>
-        </div>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-6 border-t border-slate-900 text-center text-slate-600 text-[11px]">
-            © 2026 Estúdio Sol & Mimo. Todos os direitos reservados.
-        </div>
-    </footer>
-
-    <!-- Interactive Product Detail Modal com Pré-Visualização em Tempo Real (Live Preview) -->
-    <div id="productModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md">
-        <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl relative overflow-y-auto max-h-[90vh]">
-            <button onclick="closeProductModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl p-2 z-10">✕</button>
-
-            <div class="grid sm:grid-cols-2 gap-6 items-start">
-                
-                <!-- Área de Pré-Visualização Visual (Live Preview Mockup) -->
-                <div class="space-y-3">
-                    <div class="relative bg-slate-950 rounded-2xl overflow-hidden border border-slate-800 flex items-center justify-center min-h-[240px]">
-                        
-                        <!-- Imagem Base do Mockup -->
-                        <img id="modalProductImage" src="" alt="Mockup Produto" class="w-full h-60 object-cover">
-
-                        <!-- Camada de Texto em Tempo Real -->
-                        <div id="previewOverlayText" class="absolute text-center font-black text-white text-sm tracking-wide drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] px-4 pointer-events-none transition-all"></div>
-
-                        <!-- Camada de Foto/Imagem Carregada em Tempo Real -->
-                        <img id="previewOverlayImage" src="" class="absolute max-w-[35%] max-h-[35%] object-contain rounded-lg border-2 border-dashed border-mimo-500 hidden shadow-2xl pointer-events-none">
-
-                        <span id="modalPackagingBadge" class="absolute top-3 left-3 bg-mimo-600 text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-md shadow-md">
-                            Caixa + Sacola Inclusas
-                        </span>
-                    </div>
-
-                    <!-- Caixas de Entrada para Personalização em Tempo Real -->
-                    <div class="bg-slate-950/70 p-3 rounded-2xl border border-slate-800/80 space-y-2">
-                        <div>
-                            <label class="block text-[11px] font-bold text-slate-300 mb-1">✍️ Digite o Nome / Frase para a Estampa:</label>
-                            <input type="text" id="customTextInput" oninput="updateLivePreview()" placeholder="Ex: Eng. Silva / 'Melhor Pai do Mundo'"
-                                class="w-full bg-slate-800 text-white text-xs px-3 py-2 rounded-xl border border-slate-700 focus:outline-none focus:border-mimo-500 transition">
-                        </div>
-
-                        <div>
-                            <label class="block text-[11px] font-bold text-slate-300 mb-1">🖼️ Quer foto na estampa? (Opcional):</label>
-                            <input type="file" id="customImageInput" accept="image/*" onchange="handleImageUpload(event)"
-                                class="w-full text-xs text-slate-400 file:mr-3 file:py-1 file:px-2.5 file:rounded-lg file:border-0 file:text-[11px] file:font-bold file:bg-mimo-600 file:text-white hover:file:bg-mimo-500 cursor-pointer">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Detalhes do Produto & Variações -->
-                <div class="space-y-4">
-                    <div>
-                        <span id="modalProductCategory" class="text-[10px] font-bold text-mimo-400 uppercase tracking-wider block mb-1">Mimo</span>
-                        <h3 id="modalProductTitle" class="text-2xl font-black text-white leading-snug">Título do Produto</h3>
-                        <p id="modalProductDesc" class="text-xs text-slate-400 leading-relaxed mt-1">Descrição detalhada do item.</p>
-                    </div>
-
-                    <div class="bg-purple-950/50 p-3 rounded-xl border border-purple-800/50 text-[11px] text-purple-200 flex items-center gap-2">
-                        <span class="text-base">🎁</span>
-                        <span><strong>Embalagem Pronta:</strong> Caixa kraft especial e sacola com laço prontas para presentear!</span>
-                    </div>
-
-                    <div id="modalVariantContainer">
-                        <label id="modalVariantLabel" class="block text-xs font-bold text-slate-300 mb-1.5">Escolha a Variação:</label>
-                        <div id="modalVariantOptions" class="grid grid-cols-2 gap-2 text-xs"></div>
-                    </div>
-
-                    <div class="pt-2 border-t border-slate-800 flex items-center justify-between">
-                        <div>
-                            <span class="text-[10px] text-slate-400 block uppercase">Preço Total</span>
-                            <span id="modalProductPrice" class="text-2xl font-black text-mimo-400">R$ 39,90</span>
-                        </div>
-
-                        <div class="flex items-center gap-2 bg-slate-800 p-1 rounded-xl border border-slate-700">
-                            <button onclick="changeModalQty(-1)" class="w-8 h-8 font-bold text-slate-300 hover:text-white flex items-center justify-center">-</button>
-                            <span id="modalQtyDisplay" class="font-bold text-sm w-6 text-center">1</span>
-                            <button onclick="changeModalQty(1)" class="w-8 h-8 font-bold text-slate-300 hover:text-white flex items-center justify-center">+</button>
-                        </div>
-                    </div>
-
-                    <button onclick="addModalItemToCart()" class="w-full bg-mimo-600 hover:bg-mimo-500 text-white font-extrabold py-3.5 rounded-xl shadow-glow-mimo transition">
-                        🛒 Adicionar ao Carrinho
-                    </button>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <!-- Interactive Shopping Cart Drawer -->
+    <!-- Interactive Cart Drawer -->
     <div id="cartDrawer" class="fixed inset-0 z-50 hidden">
         <div onclick="toggleCartDrawer()" class="absolute inset-0 bg-slate-950/70 backdrop-blur-sm"></div>
         <div class="absolute top-0 right-0 bottom-0 w-full max-w-md bg-slate-900 border-l border-slate-800 p-6 flex flex-col justify-between shadow-2xl z-10">
-            
             <div>
                 <div class="flex items-center justify-between pb-4 border-b border-slate-800">
                     <div class="flex items-center gap-2">
                         <span class="text-xl">🛒</span>
                         <h3 class="font-black text-lg text-white">Seu Carrinho de Mimos</h3>
                     </div>
-                    <button onclick="toggleCartDrawer()" class="text-slate-400 hover:text-white text-xl p-1">✕</button>
+                    <button type="button" onclick="toggleCartDrawer()" class="text-slate-400 hover:text-white text-xl p-1">✕</button>
                 </div>
 
                 <div id="cartItemsList" class="mt-4 space-y-3 max-h-[50vh] overflow-y-auto pr-1"></div>
@@ -728,34 +523,14 @@
                 <div id="cartEmptyMsg" class="hidden text-center py-12 space-y-2">
                     <div class="text-4xl">🛍️</div>
                     <p class="text-sm font-bold text-slate-300">Seu carrinho está vazio</p>
-                    <p class="text-xs text-slate-500">Escolha uma caneca ou camiseta especial no nosso catálogo!</p>
                 </div>
             </div>
 
             <div id="cartSummarySection" class="pt-4 border-t border-slate-800 space-y-3">
-                <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 text-xs space-y-2">
-                    <div class="flex justify-between items-center text-slate-300 font-semibold">
-                        <span>🚚 Estimar Frete (CEP):</span>
-                        <span id="freightResultText" class="text-emerald-400 font-bold"></span>
-                    </div>
-                    <div class="flex gap-2">
-                        <input type="text" id="cepInput" placeholder="00000-000" maxlength="9" class="w-full bg-slate-800 text-white text-xs px-3 py-1.5 rounded-lg border border-slate-700">
-                        <button onclick="calculateFreight()" class="bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1.5 rounded-lg font-bold">Calcular</button>
-                    </div>
-                </div>
-
                 <div class="space-y-1 text-xs">
                     <div class="flex justify-between text-slate-400">
                         <span>Subtotal dos Mimos:</span>
                         <span id="cartSubtotalVal" class="font-bold text-slate-200">R$ 0,00</span>
-                    </div>
-                    <div class="flex justify-between text-slate-400">
-                        <span>Embalagens de Presente:</span>
-                        <span class="font-bold text-emerald-400">GRÁTIS 🎁</span>
-                    </div>
-                    <div class="flex justify-between text-slate-400">
-                        <span>Frete Estimado:</span>
-                        <span id="cartFreightVal" class="font-bold text-slate-200">R$ 0,00</span>
                     </div>
                     <div class="flex justify-between text-base font-black text-white pt-2 border-t border-slate-800">
                         <span>Total:</span>
@@ -763,27 +538,17 @@
                     </div>
                 </div>
 
-                <button onclick="checkoutViaWhatsApp()" class="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-extrabold py-3.5 rounded-xl shadow-lg transition flex items-center justify-center gap-2 text-sm">
+                <button type="button" onclick="checkoutViaWhatsApp()" class="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 text-white font-extrabold py-3.5 rounded-xl shadow-lg transition flex items-center justify-center gap-2 text-sm">
                     <span>💬 Finalizar Pedido no WhatsApp</span>
                 </button>
-                <p class="text-[10px] text-slate-500 text-center">Você será direcionado para o atendimento com o resumo do pedido.</p>
             </div>
-
         </div>
     </div>
 
-    <!-- Institutional Policy Modal -->
-    <div id="institutionalModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md">
-        <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-xl w-full p-6 sm:p-8 shadow-2xl relative">
-            <button onclick="closeInstitutionalModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl">✕</button>
-            <div id="instModalContent" class="space-y-4 text-xs sm:text-sm text-slate-300"></div>
-        </div>
-    </div>
-
-    <!-- Toast Container -->
+    <!-- Toast Notifications -->
     <div id="toastContainer" class="fixed top-24 right-4 z-50 flex flex-col gap-2 pointer-events-none"></div>
 
-    <!-- Floating WhatsApp Action Button -->
+    <!-- Floating WhatsApp Button -->
     <a href="https://wa.me/5521965480938?text=Olá!%20Vim%20pelo%20site%20Estúdio%20Sol%20%26%20Mimo." target="_blank" 
         class="fixed bottom-6 right-6 bg-emerald-500 hover:bg-emerald-400 text-white p-4 rounded-full shadow-2xl z-40 flex items-center justify-center transition transform hover:scale-110 group">
         <span class="absolute -top-1 -right-1 bg-rose-500 text-white text-[10px] font-black w-5 h-5 rounded-full flex items-center justify-center border-2 border-slate-950 animate-bounce">1</span>
@@ -792,7 +557,6 @@
 
     <!-- JavaScript Application Logic -->
     <script>
-        /* Banco de Dados de Produtos com Fotos de Nichos */
         const PRODUCTS = [
             {
                 id: 1,
@@ -801,8 +565,7 @@
                 theme: 'Profissões',
                 price: 39.90,
                 image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&auto=format&fit=crop',
-                time: 'Pronta entrega',
-                desc: 'Caneca de cerâmica 325ml para dev com estampa sublimada em alta resolução.',
+                desc: 'Caneca de cerâmica 325ml com estampa sublimada em alta definição.',
                 hasVariants: true,
                 variantType: 'mug',
                 variants: [
@@ -818,8 +581,7 @@
                 theme: 'Profissões',
                 price: 39.90,
                 image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&auto=format&fit=crop',
-                time: '1-2 dias produção',
-                desc: 'Presente sofisticado para profissionais do Direito. Acompanha embalagem decorativa.',
+                desc: 'Presente sofisticado para profissionais do Direito com caixa e sacola.',
                 hasVariants: true,
                 variantType: 'mug',
                 variants: [
@@ -834,8 +596,7 @@
                 theme: 'Geek',
                 price: 59.90,
                 image: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=600&auto=format&fit=crop',
-                time: '1-2 dias produção',
-                desc: 'Camiseta 100% Algodão penteado fio 30.1. Toque macio e estampa resistente.',
+                desc: '100% Algodão penteado fio 30.1. Toque macio e estampa resistente.',
                 hasVariants: true,
                 variantType: 'tshirt',
                 variants: [
@@ -852,8 +613,7 @@
                 theme: 'Românticos',
                 price: 49.90,
                 image: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600&auto=format&fit=crop',
-                time: 'Pronta entrega',
-                desc: 'Revela a frase e arte personalizada ao despejar bebida quente! Surpresa garantida.',
+                desc: 'Revela a frase e foto especial ao despejar bebida quente.',
                 hasVariants: false
             },
             {
@@ -863,8 +623,7 @@
                 theme: 'Geek',
                 price: 39.90,
                 image: 'https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=600&auto=format&fit=crop',
-                time: 'Pronta entrega',
-                desc: 'Para os apaixonados por video games e setups com estilo. Design exclusivo.',
+                desc: 'Para os apaixonados por video games e setups de alta performance.',
                 hasVariants: true,
                 variantType: 'mug',
                 variants: [
@@ -879,8 +638,7 @@
                 theme: 'Profissões',
                 price: 59.90,
                 image: 'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=600&auto=format&fit=crop',
-                time: '1-2 dias produção',
-                desc: 'Minimalista e inspiradora. Tecido respirável e confortável para o dia a dia.',
+                desc: 'Minimalista e inspiradora. Tecido respirável e muito confortável.',
                 hasVariants: true,
                 variantType: 'tshirt',
                 variants: [
@@ -889,38 +647,9 @@
                     { name: 'Tamanho G', priceOffset: 0 },
                     { name: 'Tamanho GG', priceOffset: 5.00 }
                 ]
-            },
-            {
-                id: 7,
-                title: 'Caneca "Camisa 10 do Futebol"',
-                category: 'Canecas',
-                theme: 'Esportes',
-                price: 39.90,
-                image: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=600&auto=format&fit=crop',
-                time: 'Pronta entrega',
-                desc: 'Homenagem especial para os loucos por futebol e a resenha de fim de semana.',
-                hasVariants: false
-            },
-            {
-                id: 8,
-                title: 'Camiseta "Só Mais Um Episódio"',
-                category: 'Camisetas',
-                theme: 'Séries',
-                price: 59.90,
-                image: 'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=600&auto=format&fit=crop',
-                time: '1-2 dias produção',
-                desc: 'Perfeita para maratonar suas séries e filmes preferidos com estilo e conforto.',
-                hasVariants: true,
-                variantType: 'tshirt',
-                variants: [
-                    { name: 'Tamanho P', priceOffset: 0 },
-                    { name: 'Tamanho M', priceOffset: 0 },
-                    { name: 'Tamanho G', priceOffset: 0 }
-                ]
             }
         ];
 
-        /* Estado Global */
         let state = {
             activeCategory: 'Todos',
             activeTheme: 'Todos',
@@ -929,7 +658,7 @@
             selectedProductForModal: null,
             modalSelectedVariant: null,
             modalQty: 1,
-            estimatedFreight: 0
+            uploadedImageObj: null
         };
 
         document.addEventListener('DOMContentLoaded', () => {
@@ -939,170 +668,76 @@
 
         function renderProducts() {
             const grid = document.getElementById('productGrid');
-            const empty = document.getElementById('emptyState');
+            if (!grid) return;
             grid.innerHTML = '';
 
             let filtered = PRODUCTS.filter(p => {
-                const matchCategory = state.activeCategory === 'Todos' || p.category === state.activeCategory;
+                const matchCat = state.activeCategory === 'Todos' || p.category === state.activeCategory;
                 const matchTheme = state.activeTheme === 'Todos' || p.theme === state.activeTheme;
-                const matchSearch = p.title.toLowerCase().includes(state.searchQuery.toLowerCase()) || 
-                                    p.desc.toLowerCase().includes(state.searchQuery.toLowerCase()) ||
-                                    p.theme.toLowerCase().includes(state.searchQuery.toLowerCase());
-                return matchCategory && matchTheme && matchSearch;
+                const matchSearch = p.title.toLowerCase().includes(state.searchQuery.toLowerCase());
+                return matchCat && matchTheme && matchSearch;
             });
 
-            if (filtered.length === 0) {
-                empty.classList.remove('hidden');
-            } else {
-                empty.classList.add('hidden');
-                filtered.forEach(product => {
-                    grid.appendChild(createProductCard(product));
-                });
-            }
+            filtered.forEach(product => {
+                grid.appendChild(createProductCard(product));
+            });
         }
 
         function createProductCard(product) {
             const card = document.createElement('div');
             card.className = "bg-slate-900 rounded-3xl border border-slate-800 shadow-xl overflow-hidden flex flex-col justify-between hover:border-mimo-500/50 transition duration-300 group";
-            
             card.innerHTML = `
                 <div>
                     <div class="relative bg-slate-950 h-52 overflow-hidden border-b border-slate-800/80">
-                        <img src="${product.image}" alt="${product.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        <span class="absolute top-3 left-3 bg-mimo-600/90 text-white text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-lg backdrop-blur-md shadow-md">
-                            🎁 Caixa + Sacola
-                        </span>
-                        <span class="absolute bottom-3 right-3 text-[10px] text-slate-300 bg-slate-950/80 px-2 py-0.5 rounded-md border border-slate-800 backdrop-blur-sm">
-                            ${product.time}
-                        </span>
+                        <img src="${product.image}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-3 left-3 bg-mimo-600/90 text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-lg">🎁 Caixa + Sacola</span>
                     </div>
-
                     <div class="p-5 space-y-2">
-                        <div class="flex items-center gap-2">
-                            <span class="text-[10px] font-extrabold text-mimo-400 bg-mimo-950 px-2 py-0.5 rounded border border-mimo-800/60 uppercase">${product.theme}</span>
-                            <span class="text-[10px] text-slate-500 font-semibold">${product.category}</span>
-                        </div>
-                        <h3 class="font-bold text-white text-base leading-snug group-hover:text-mimo-300 transition">${product.title}</h3>
+                        <span class="text-[10px] font-extrabold text-mimo-400 bg-mimo-950 px-2 py-0.5 rounded border border-mimo-800/60 uppercase">${product.theme}</span>
+                        <h3 class="font-bold text-white text-base">${product.title}</h3>
                         <p class="text-xs text-slate-400 line-clamp-2">${product.desc}</p>
                     </div>
                 </div>
-
                 <div class="p-5 pt-0">
-                    <div class="flex items-center justify-between mb-3 pt-3 border-t border-slate-800/80">
-                        <div>
-                            <span class="text-[10px] text-slate-500 block">A partir de</span>
-                            <span class="text-xl font-black text-white">R$ ${product.price.toFixed(2).replace('.', ',')}</span>
-                        </div>
+                    <div class="flex items-center justify-between mb-3 pt-3 border-t border-slate-800">
+                        <span class="text-xl font-black text-white">R$ ${product.price.toFixed(2).replace('.', ',')}</span>
                         <span class="text-[10px] text-emerald-400 font-bold bg-emerald-950/80 px-2 py-1 rounded">Embalagem Grátis</span>
                     </div>
-                    <button onclick="openProductModal(${product.id})" class="w-full bg-slate-800 hover:bg-mimo-600 text-white font-extrabold text-xs py-3 rounded-xl transition shadow-md flex items-center justify-center gap-1.5">
-                        <span>Personalizar & Adicionar</span>
+                    <button type="button" onclick="openProductModal(${product.id})" class="w-full bg-slate-800 hover:bg-mimo-600 text-white font-extrabold text-xs py-3 rounded-xl transition">
+                        Simular & Personalizar
                     </button>
                 </div>
             `;
             return card;
         }
 
-        /* Controles de Filtro */
-        function filterCategory(cat) {
-            state.activeCategory = cat;
-            document.querySelectorAll('#filterTabs button').forEach(b => {
-                b.className = "px-4 py-2 rounded-xl bg-slate-800 text-slate-300 hover:bg-slate-700 transition";
-            });
-            const activeTab = document.getElementById(`tab-${cat}`);
-            if (activeTab) activeTab.className = "px-4 py-2 rounded-xl bg-mimo-600 text-white shadow-md transition";
-            
-            updateFilterIndicator();
-            renderProducts();
-        }
-
-        function filterTheme(theme) {
-            state.activeTheme = theme;
-            updateFilterIndicator();
-            renderProducts();
-        }
-
-        function updateFilterIndicator() {
-            const badge = document.getElementById('activeFilterBadge');
-            const text = document.getElementById('activeFilterText');
-            if (state.activeTheme !== 'Todos' || state.activeCategory !== 'Todos') {
-                badge.classList.remove('hidden');
-                text.innerText = `${state.activeCategory !== 'Todos' ? state.activeCategory : ''} ${state.activeTheme !== 'Todos' ? '• ' + state.activeTheme : ''}`;
-            } else {
-                badge.classList.add('hidden');
-            }
-        }
-
-        function resetFilters() {
-            state.activeCategory = 'Todos';
-            state.activeTheme = 'Todos';
-            state.searchQuery = '';
-            document.getElementById('searchInput').value = '';
-            filterCategory('Todos');
-        }
-
-        function handleSearch() {
-            state.searchQuery = document.getElementById('searchInput').value;
-            const clearBtn = document.getElementById('clearSearchBtn');
-            if (state.searchQuery.length > 0) {
-                clearBtn.classList.remove('hidden');
-            } else {
-                clearBtn.classList.add('hidden');
-            }
-            renderProducts();
-        }
-
-        function handleMobileSearch() {
-            state.searchQuery = document.getElementById('mobileSearchInput').value;
-            renderProducts();
-        }
-
-        function clearSearch() {
-            document.getElementById('searchInput').value = '';
-            state.searchQuery = '';
-            document.getElementById('clearSearchBtn').classList.add('hidden');
-            renderProducts();
-        }
-
-        /* Modal & Live Preview Logic */
+        /* HTML5 Canvas Live Preview Customizer Engine */
         function openProductModal(productId) {
-            const product = PRODUCTS.find(p => p.id === productId);
+            const product = PRODUCTS.find(p => p.id == productId);
             if (!product) return;
 
             state.selectedProductForModal = product;
             state.modalQty = 1;
+            state.uploadedImageObj = null;
 
             document.getElementById('modalProductTitle').innerText = product.title;
-            document.getElementById('modalProductDesc').innerText = product.desc;
             document.getElementById('modalProductCategory').innerText = `${product.category} • ${product.theme}`;
-            document.getElementById('modalProductImage').src = product.image;
-            document.getElementById('modalQtyDisplay').innerText = '1';
-
-            // Reset inputs e preview
             document.getElementById('customTextInput').value = '';
             document.getElementById('customImageInput').value = '';
-            document.getElementById('previewOverlayText').innerText = '';
-            
-            const overlayImg = document.getElementById('previewOverlayImage');
-            overlayImg.src = '';
-            overlayImg.classList.add('hidden');
 
             const variantContainer = document.getElementById('modalVariantContainer');
             const variantOptions = document.getElementById('modalVariantOptions');
-            const variantLabel = document.getElementById('modalVariantLabel');
             variantOptions.innerHTML = '';
 
             if (product.hasVariants && product.variants.length > 0) {
                 variantContainer.classList.remove('hidden');
-                variantLabel.innerText = product.variantType === 'mug' ? 'Escolha o Material / Tipo:' : 'Escolha o Tamanho da Camiseta:';
-                
                 state.modalSelectedVariant = product.variants[0];
-
-                product.variants.forEach((v, index) => {
+                product.variants.forEach((v, idx) => {
                     const btn = document.createElement('button');
-                    btn.className = `p-2.5 rounded-xl border text-left font-semibold transition ${index === 0 ? 'border-mimo-500 bg-mimo-950 text-white' : 'border-slate-700 bg-slate-800 text-slate-300'}`;
+                    btn.type = 'button';
+                    btn.className = `p-2 rounded-xl border text-left font-semibold ${idx === 0 ? 'border-mimo-500 bg-mimo-950 text-white' : 'border-slate-700 bg-slate-800 text-slate-300'}`;
                     btn.onclick = () => selectModalVariant(v, btn);
-                    btn.innerHTML = `<div>${v.name}</div><div class="text-[10px] text-mimo-400 font-normal">${v.priceOffset > 0 ? '+ R$ ' + v.priceOffset.toFixed(2) : (v.priceOffset < 0 ? '- R$ ' + Math.abs(v.priceOffset).toFixed(2) : 'Preço Normal')}</div>`;
+                    btn.innerHTML = `<div>${v.name}</div>`;
                     variantOptions.appendChild(btn);
                 });
             } else {
@@ -1111,37 +746,94 @@
             }
 
             updateModalPrice();
-            document.getElementById('productModal').classList.remove('hidden');
+            const modal = document.getElementById('productModal');
+            modal.classList.remove('hidden');
+            modal.style.display = 'flex';
+
+            renderCanvasPreview();
         }
 
-        function updateLivePreview() {
-            const textInput = document.getElementById('customTextInput').value;
-            const overlayText = document.getElementById('previewOverlayText');
-            overlayText.innerText = textInput.trim() !== '' ? textInput : '';
+        function renderCanvasPreview() {
+            const canvas = document.getElementById('previewCanvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            const baseImg = new Image();
+            baseImg.crossOrigin = "anonymous";
+            baseImg.src = state.selectedProductForModal ? state.selectedProductForModal.image : '';
+
+            baseImg.onload = function() {
+                // Desenhar Fundo do Produto
+                ctx.drawImage(baseImg, 0, 0, canvas.width, canvas.height);
+
+                // Moldura/Máscara de Estampa
+                ctx.strokeStyle = "rgba(168, 85, 247, 0.4)";
+                ctx.lineWidth = 2;
+                ctx.setLineDash([6, 6]);
+                ctx.strokeRect(40, 40, canvas.width - 80, canvas.height - 80);
+                ctx.setLineDash([]);
+
+                // Desenhar Foto Carregada se existir
+                if (state.uploadedImageObj) {
+                    ctx.save();
+                    const imgW = 110;
+                    const imgH = 110;
+                    ctx.drawImage(state.uploadedImageObj, (canvas.width / 2) - (imgW / 2), (canvas.height / 2) - (imgH / 2) - 15, imgW, imgH);
+                    ctx.restore();
+                }
+
+                // Desenhar Texto do Cliente
+                const text = document.getElementById('customTextInput').value;
+                if (text.trim() !== '') {
+                    const font = document.getElementById('customFontSelect').value || 'Georgia';
+                    const color = document.getElementById('customColorSelect').value || '#F59E0B';
+
+                    ctx.save();
+                    ctx.font = `bold 22px "${font}", Georgia, serif`;
+                    ctx.fillStyle = color;
+                    ctx.textAlign = 'center';
+                    ctx.shadowColor = 'rgba(0, 0, 0, 0.85)';
+                    ctx.shadowBlur = 6;
+                    ctx.shadowOffsetY = 2;
+
+                    const yPos = state.uploadedImageObj ? canvas.height - 55 : canvas.height / 2 + 10;
+                    ctx.fillText(text, canvas.width / 2, yPos);
+                    ctx.restore();
+                }
+            };
         }
 
         function handleImageUpload(event) {
             const file = event.target.files[0];
-            const overlayImg = document.getElementById('previewOverlayImage');
-
             if (file) {
                 const reader = new FileReader();
                 reader.onload = function(e) {
-                    overlayImg.src = e.target.result;
-                    overlayImg.classList.remove('hidden');
+                    const img = new Image();
+                    img.onload = function() {
+                        state.uploadedImageObj = img;
+                        renderCanvasPreview();
+                    };
+                    img.src = e.target.result;
                 };
                 reader.readAsDataURL(file);
             } else {
-                overlayImg.src = '';
-                overlayImg.classList.add('hidden');
+                state.uploadedImageObj = null;
+                renderCanvasPreview();
             }
+        }
+
+        function closeProductModal() {
+            const modal = document.getElementById('productModal');
+            modal.classList.add('hidden');
+            modal.style.display = 'none';
         }
 
         function selectModalVariant(variant, btnElement) {
             state.modalSelectedVariant = variant;
             const buttons = document.querySelectorAll('#modalVariantOptions button');
-            buttons.forEach(b => b.className = "p-2.5 rounded-xl border border-slate-700 bg-slate-800 text-slate-300 text-left font-semibold");
-            btnElement.className = "p-2.5 rounded-xl border border-mimo-500 bg-mimo-950 text-white text-left font-semibold";
+            buttons.forEach(b => b.className = "p-2 rounded-xl border border-slate-700 bg-slate-800 text-slate-300 text-left font-semibold");
+            btnElement.className = "p-2 rounded-xl border border-mimo-500 bg-mimo-950 text-white text-left font-semibold";
             updateModalPrice();
         }
 
@@ -1161,15 +853,13 @@
             document.getElementById('modalProductPrice').innerText = `R$ ${totalPrice.toFixed(2).replace('.', ',')}`;
         }
 
-        function closeProductModal() {
-            document.getElementById('productModal').classList.add('hidden');
-        }
-
         function addModalItemToCart() {
             if (!state.selectedProductForModal) return;
-            
+
             const customText = document.getElementById('customTextInput').value.trim();
-            const hasCustomImage = document.getElementById('customImageInput').files.length > 0;
+            const customFont = document.getElementById('customFontSelect').value;
+            const customColor = document.getElementById('customColorSelect').value;
+            const hasPhoto = state.uploadedImageObj !== null;
 
             let unitPrice = state.selectedProductForModal.price;
             let variantName = 'Padrão';
@@ -1180,12 +870,13 @@
 
             const cartItem = {
                 cartItemId: Date.now(),
-                productId: state.selectedProductForModal.id,
                 title: state.selectedProductForModal.title,
                 image: state.selectedProductForModal.image,
                 variantName: variantName,
-                customText: customText || 'Padrão da estampa',
-                hasCustomImage: hasCustomImage ? 'Sim (Anexo no WhatsApp)' : 'Não',
+                customText: customText || 'Padrão da Estampa',
+                customFont: customFont,
+                customColor: customColor,
+                hasPhoto: hasPhoto ? 'Sim (Envia no WhatsApp)' : 'Não',
                 unitPrice: unitPrice,
                 qty: state.modalQty
             };
@@ -1193,69 +884,44 @@
             state.cart.push(cartItem);
             updateCartUI();
             closeProductModal();
-            showToast(`🎁 "${cartItem.title}" adicionado ao carrinho!`);
+            showToast(`🎁 "${cartItem.title}" adicionado com a prévia personalizada!`);
             toggleCartDrawer();
         }
 
         function updateCartUI() {
             const badge = document.getElementById('cartCountBadge');
-            const totalQty = state.cart.reduce((acc, item) => acc + item.qty, 0);
-            badge.innerText = totalQty;
+            badge.innerText = state.cart.reduce((acc, item) => acc + item.qty, 0);
 
             const itemsList = document.getElementById('cartItemsList');
             const emptyMsg = document.getElementById('cartEmptyMsg');
-            const summarySection = document.getElementById('cartSummarySection');
-
             itemsList.innerHTML = '';
 
             if (state.cart.length === 0) {
                 emptyMsg.classList.remove('hidden');
-                summarySection.classList.add('opacity-50', 'pointer-events-none');
             } else {
                 emptyMsg.classList.add('hidden');
-                summarySection.classList.remove('opacity-50', 'pointer-events-none');
-
                 state.cart.forEach((item, index) => {
                     const itemEl = document.createElement('div');
-                    itemEl.className = "bg-slate-950 p-3 rounded-2xl border border-slate-800 flex items-center justify-between gap-3";
+                    itemEl.className = "bg-slate-950 p-3 rounded-2xl border border-slate-800 flex items-center justify-between gap-3 text-xs";
                     itemEl.innerHTML = `
                         <div class="flex items-center gap-3">
                             <img src="${item.image}" class="w-12 h-12 object-cover rounded-xl border border-slate-800">
                             <div>
-                                <h4 class="text-xs font-bold text-white leading-tight">${item.title}</h4>
+                                <h4 class="font-bold text-white">${item.title}</h4>
                                 <span class="text-[10px] text-mimo-400 font-semibold block">${item.variantName}</span>
-                                ${item.customText !== 'Padrão da estampa' ? `<span class="text-[10px] text-slate-400 block">✍️ "${item.customText}"</span>` : ''}
-                                <span class="text-xs font-black text-slate-200 block mt-0.5">R$ ${(item.unitPrice * item.qty).toFixed(2).replace('.', ',')}</span>
+                                ${item.customText !== 'Padrão da Estampa' ? `<span class="text-[10px] text-slate-300 block">✍️ "${item.customText}"</span>` : ''}
+                                <span class="font-black text-slate-200 mt-0.5 block">R$ ${(item.unitPrice * item.qty).toFixed(2).replace('.', ',')}</span>
                             </div>
                         </div>
-                        <div class="flex items-center gap-2">
-                            <div class="flex items-center gap-1 bg-slate-800 p-0.5 rounded-lg border border-slate-700 text-xs">
-                                <button onclick="updateCartQty(${index}, -1)" class="w-6 h-6 text-slate-300 font-bold hover:text-white flex items-center justify-center">-</button>
-                                <span class="font-bold text-white px-1">${item.qty}</span>
-                                <button onclick="updateCartQty(${index}, 1)" class="w-6 h-6 text-slate-300 font-bold hover:text-white flex items-center justify-center">+</button>
-                            </div>
-                            <button onclick="removeCartItem(${index})" class="text-slate-500 hover:text-rose-400 text-sm p-1">✕</button>
-                        </div>
+                        <button type="button" onclick="removeCartItem(${index})" class="text-slate-500 hover:text-rose-400 font-bold p-1">✕</button>
                     `;
                     itemsList.appendChild(itemEl);
                 });
             }
 
             const subtotal = state.cart.reduce((acc, item) => acc + (item.unitPrice * item.qty), 0);
-            const total = subtotal + state.estimatedFreight;
-
             document.getElementById('cartSubtotalVal').innerText = `R$ ${subtotal.toFixed(2).replace('.', ',')}`;
-            document.getElementById('cartFreightVal').innerText = state.estimatedFreight > 0 ? `R$ ${state.estimatedFreight.toFixed(2).replace('.', ',')}` : 'Grátis / A calcular';
-            document.getElementById('cartTotalVal').innerText = `R$ ${total.toFixed(2).replace('.', ',')}`;
-        }
-
-        function updateCartQty(index, delta) {
-            if (!state.cart[index]) return;
-            state.cart[index].qty += delta;
-            if (state.cart[index].qty <= 0) {
-                state.cart.splice(index, 1);
-            }
-            updateCartUI();
+            document.getElementById('cartTotalVal').innerText = `R$ ${subtotal.toFixed(2).replace('.', ',')}`;
         }
 
         function removeCartItem(index) {
@@ -1264,25 +930,58 @@
         }
 
         function toggleCartDrawer() {
-            const drawer = document.getElementById('cartDrawer');
-            drawer.classList.toggle('hidden');
+            document.getElementById('cartDrawer').classList.toggle('hidden');
         }
 
-        function calculateFreight() {
-            const cep = document.getElementById('cepInput').value.replace(/\D/g, '');
-            const resultText = document.getElementById('freightResultText');
-            if (cep.length !== 8) {
-                resultText.className = "text-rose-400 font-bold";
-                resultText.innerText = "CEP inválido";
-                return;
-            }
-            state.estimatedFreight = 15.90;
-            resultText.className = "text-emerald-400 font-bold";
-            resultText.innerText = "R$ 15,90 (Entrega Expressa)";
-            updateCartUI();
+        function filterCategory(cat) {
+            state.activeCategory = cat;
+            renderProducts();
         }
 
-        /* Simulador Solar Logic */
+        function filterTheme(theme) {
+            state.activeTheme = theme;
+            renderProducts();
+        }
+
+        function resetFilters() {
+            state.activeCategory = 'Todos';
+            state.activeTheme = 'Todos';
+            renderProducts();
+        }
+
+        function checkoutViaWhatsApp() {
+            if (state.cart.length === 0) return;
+
+            const phone = "5521965480938";
+            let itemsSummary = "";
+            let total = 0;
+
+            state.cart.forEach((item, i) => {
+                const totalItem = item.unitPrice * item.qty;
+                total += totalItem;
+                itemsSummary += `${i + 1}. *${item.title}* (${item.variantName}) x${item.qty} - R$ ${totalItem.toFixed(2)}%0A` +
+                                `   ✍️ *Texto Estampa:* ${item.customText}%0A` +
+                                `   🎨 *Fonte/Cor:* ${item.customFont} / ${item.customColor}%0A` +
+                                `   🖼️ *Anexo de Foto:* ${item.hasPhoto}%0A%0A`;
+            });
+
+            const text = `🎁 *PEDIDO COM PRÉ-VISUALIZAÇÃO - ESTÚDIO MIMO*%0A%0A` +
+                         `*Itens Personalizados:*%0A${itemsSummary}` +
+                         `*TOTAL:* R$ ${total.toFixed(2)}%0A%0A` +
+                         `Gostaria de confirmar a entrega e o pagamento!`;
+
+            window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
+        }
+
+        function showToast(msg) {
+            const container = document.getElementById('toastContainer');
+            const toast = document.createElement('div');
+            toast.className = "bg-slate-900 border border-mimo-500 text-white text-xs font-bold px-4 py-3 rounded-2xl shadow-2xl transition transform opacity-100 pointer-events-auto";
+            toast.innerText = msg;
+            container.appendChild(toast);
+            setTimeout(() => toast.remove(), 3000);
+        }
+
         function updateSolarFromRange() {
             const val = document.getElementById('solarRange').value;
             document.getElementById('solarBillInput').value = val;
@@ -1297,131 +996,19 @@
 
         function calculateSolar() {
             const bill = parseFloat(document.getElementById('solarBillInput').value) || 0;
-            
             const monthlySavings = bill * 0.90;
             const annualSavings = monthlySavings * 12;
-            const panelsCount = Math.max(2, Math.ceil(bill / 120));
-            const paybackYears = 3.2;
-            const treesPlanted = Math.round((annualSavings / 200));
 
             document.getElementById('resMonthlySavings').innerText = `R$ ${monthlySavings.toFixed(2).replace('.', ',')}`;
             document.getElementById('resAnnualSavings').innerText = `R$ ${annualSavings.toFixed(2).replace('.', ',')}`;
-            document.getElementById('resPanels').innerText = `${panelsCount} Módulos`;
-            document.getElementById('resPayback').innerText = `~${paybackYears} Anos`;
-            document.getElementById('resTrees').innerText = `~${treesPlanted} Árvores`;
         }
 
         function sendSolarWhatsAppLead() {
             const bill = document.getElementById('solarBillInput').value;
-            const propType = document.getElementById('propertyType').value;
-            const stateVal = document.getElementById('stateSelect').value;
-            const monthlySave = document.getElementById('resMonthlySavings').innerText;
-            const annualSave = document.getElementById('resAnnualSavings').innerText;
-
             const phone = "5521965480938";
-            const text = `☀️ *SOLICITAÇÃO DE ESTUDO SOLAR - ESTÚDIO SOL*%0A%0A` +
-                         `*Valor da Conta:* R$ ${bill},00/mês%0A` +
-                         `*Tipo de Imóvel:* ${propType}%0A` +
-                         `*Estado:* ${stateVal}%0A%0A` +
-                         `*Economia Estimada:* ${monthlySave}/mês (${annualSave}/ano)%0A%0A` +
-                         `Gostaria de agendar uma vistoria técnica e receber a proposta detalhada!`;
-
+            const text = `☀️ *SOLICITAÇÃO DE ESTUDO SOLAR - ESTÚDIO SOL*%0A%0A*Valor da Conta:* R$ ${bill},00/mês%0AGostaria de receber uma proposta detalhada!`;
             window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
-        }
-
-        function checkoutViaWhatsApp() {
-            if (state.cart.length === 0) return;
-
-            const phone = "5521965480938";
-            let itemsSummary = "";
-            let subtotal = 0;
-
-            state.cart.forEach((item, i) => {
-                const totalItem = item.unitPrice * item.qty;
-                subtotal += totalItem;
-                itemsSummary += `${i + 1}. *${item.title}* (${item.variantName}) x${item.qty} - R$ ${totalItem.toFixed(2)}%0A` +
-                                `   ✍️ *Texto:* ${item.customText}%0A` +
-                                `   🖼️ *Anexo de Foto:* ${item.hasCustomImage}%0A`;
-            });
-
-            const totalFinal = subtotal + state.estimatedFreight;
-
-            const text = `🎁 *PEDIDO DE PRESENTES - ESTÚDIO MIMO*%0A%0A` +
-                         `*Itens do Pedido (Embalagem Inclusa):*%0A${itemsSummary}%0A` +
-                         `*Subtotal:* R$ ${subtotal.toFixed(2)}%0A` +
-                         `*Frete Estimado:* R$ ${state.estimatedFreight.toFixed(2)}%0A` +
-                         `*TOTAL:* R$ ${totalFinal.toFixed(2)}%0A%0A` +
-                         `Gostaria de confirmar os dados de entrega e o pagamento via PIX/Cartão!`;
-
-            window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
-        }
-
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobileMenu');
-            menu.classList.toggle('hidden');
-        }
-
-        function showToast(message) {
-            const container = document.getElementById('toastContainer');
-            const toast = document.createElement('div');
-            toast.className = "bg-slate-900 border border-mimo-500 text-white text-xs font-bold px-4 py-3 rounded-2xl shadow-2xl flex items-center gap-2 transform transition-all duration-300 translate-y-[-10px] opacity-0 pointer-events-auto";
-            toast.innerHTML = `<span>${message}</span>`;
-
-            container.appendChild(toast);
-            setTimeout(() => {
-                toast.classList.remove('translate-y-[-10px]', 'opacity-0');
-            }, 10);
-
-            setTimeout(() => {
-                toast.classList.add('opacity-0', 'translate-y-[-10px]');
-                setTimeout(() => toast.remove(), 300);
-            }, 3500);
-        }
-
-        function openInstitutionalModal(type) {
-            const modal = document.getElementById('institutionalModal');
-            const content = document.getElementById('instModalContent');
-
-            if (type === 'embalagens') {
-                content.innerHTML = `
-                    <h3 class="text-xl font-black text-white flex items-center gap-2">🎁 O Diferencial Mimo: Embalagem Pronta</h3>
-                    <p class="text-slate-300">Entendemos que dar um presente vai muito além do objeto. É sobre a emoção do momento da entrega!</p>
-                    <div class="bg-purple-950/60 p-4 rounded-2xl border border-purple-800/60 space-y-2">
-                        <h4 class="font-bold text-mimo-300">O que acompanha cada produto?</h4>
-                        <ul class="list-disc list-inside space-y-1 text-slate-300 text-xs">
-                            <li>Caixa Kraft Reforçada com berço de proteção para transporte seguro.</li>
-                            <li>Sacola de Presente Especial com alça em cordão e laço.</li>
-                            <li>Tag de recado para você escrever sua mensagem especial.</li>
-                        </ul>
-                    </div>
-                `;
-            } else if (type === 'trocas') {
-                content.innerHTML = `
-                    <h3 class="text-xl font-black text-white flex items-center gap-2">🔄 Garantia e Trocas Simplificadas</h3>
-                    <p class="text-slate-300">Sua satisfação é nossa prioridade absoluta.</p>
-                    <ul class="space-y-2 text-slate-300">
-                        <li><strong>Quebra no Transporte:</strong> Repomos imediatamente sem custo em caso de avaria no envio.</li>
-                        <li><strong>Defeito de Fabricação:</strong> 30 dias de garantia total para estampa e acabamento.</li>
-                        <li><strong>Devolução por Arrependimento:</strong> Até 7 dias após o recebimento conforme o Código de Defesa do Consumidor.</li>
-                    </ul>
-                `;
-            } else {
-                content.innerHTML = `
-                    <h3 class="text-xl font-black text-white flex items-center gap-2">🎁☀️ Quem Somos</h3>
-                    <p class="text-slate-300">O <strong>Estúdio Sol & Mimo</strong> é um estúdio de inovação que combina e-commerce de mimos personalizados com consultoria e projetos de Energia Solar Fotovoltaica.</p>
-                    <p class="text-slate-400">Nossa missão é trazer leveza, sorrisos e economia real para o seu dia a dia.</p>
-                `;
-            }
-
-            modal.classList.remove('hidden');
-        }
-
-        function closeInstitutionalModal() {
-            document.getElementById('institutionalModal').classList.add('hidden');
         }
     </script>
 </body>
 </html>
-           
-   
-       
