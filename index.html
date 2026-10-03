@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estúdio Sol & Mimo | Presentes que Emocionam 🎁 & Energia que Transforma ☀️</title>
+    
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -13,32 +14,16 @@
                 extend: {
                     colors: {
                         mimo: {
-                            50: '#fdf4ff',
-                            100: '#fae8ff',
-                            200: '#f5d0fe',
-                            500: '#a855f7',
-                            600: '#9333ea',
-                            700: '#7e22ce',
-                            800: '#6b21a8',
-                            900: '#581c87',
+                            50: '#fdf4ff', 100: '#fae8ff', 200: '#f5d0fe', 500: '#a855f7',
+                            600: '#9333ea', 700: '#7e22ce', 800: '#6b21a8', 900: '#581c87',
                         },
                         sol: {
-                            50: '#fffbeb',
-                            100: '#fef3c7',
-                            400: '#fbbf24',
-                            500: '#f59e0b',
-                            600: '#d97706',
-                            700: '#b45309',
-                            800: '#92400e',
+                            50: '#fffbeb', 100: '#fef3c7', 400: '#fbbf24', 500: '#f59e0b',
+                            600: '#d97706', 700: '#b45309', 800: '#92400e',
                         },
-                        roseGift: {
-                            500: '#f43f5e',
-                            600: '#e11d48',
-                        }
+                        roseGift: { 500: '#f43f5e', 600: '#e11d48' }
                     },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
                     boxShadow: {
                         'glow-mimo': '0 0 25px -5px rgba(147, 51, 234, 0.4)',
                         'glow-sol': '0 0 25px -5px rgba(245, 158, 11, 0.4)',
@@ -47,24 +32,9 @@
             }
         }
     </script>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Cinzel:wght@700&family=Inter:wght@400;600;800;900&family=Montserrat:wght@800&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
     
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-        .badge-pulse { animation: pulse-border 2s infinite; }
-        @keyframes pulse-border {
-            0% { box-shadow: 0 0 0 0 rgba(168, 85, 247, 0.6); }
-            70% { box-shadow: 0 0 0 10px rgba(168, 85, 247, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(168, 85, 247, 0); }
-        }
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #0f172a; }
-        ::-webkit-scrollbar-thumb { background: #475569; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #9333ea; }
-    </style>
+    <!-- CSS Externo -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-slate-950 text-slate-100 antialiased selection:bg-mimo-500 selection:text-white min-h-screen flex flex-col">
 
@@ -79,8 +49,6 @@
     <!-- Main Navigation Header -->
     <header class="sticky top-0 z-40 bg-slate-900/90 backdrop-blur-md border-b border-slate-800 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
-            
-            <!-- Brand Logo -->
             <a href="#" class="flex items-center gap-3 group">
                 <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-mimo-600 via-purple-500 to-sol-500 p-0.5 shadow-lg shadow-mimo-600/30 group-hover:scale-105 transition transform">
                     <div class="w-full h-full bg-slate-900 rounded-[14px] flex items-center justify-center font-black text-xl text-white">
@@ -95,14 +63,13 @@
                 </div>
             </a>
 
-            <!-- Search Bar (Desktop) -->
+            <!-- Search Bar -->
             <div class="hidden lg:flex flex-1 max-w-md mx-6 relative">
                 <input type="text" id="searchInput" onkeyup="handleSearch()" placeholder="Buscar por caneca, profissão, camisetas, séries..." 
                     class="w-full bg-slate-800/80 text-sm text-slate-100 placeholder-slate-400 pl-10 pr-10 py-2.5 rounded-xl border border-slate-700 focus:outline-none focus:border-mimo-500 focus:ring-1 focus:ring-mimo-500 transition">
                 <svg class="w-5 h-5 text-slate-400 absolute left-3 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
                 </svg>
-                <button id="clearSearchBtn" onclick="clearSearch()" class="hidden absolute right-3 top-2.5 text-slate-400 hover:text-white">✕</button>
             </div>
 
             <!-- Navigation Links -->
@@ -110,23 +77,6 @@
                 <a href="#home" class="hover:text-mimo-500 transition">Início</a>
                 <a href="#store" onclick="filterCategory('Canecas')" class="hover:text-mimo-500 transition flex items-center gap-1">☕ Canecas</a>
                 <a href="#store" onclick="filterCategory('Camisetas')" class="hover:text-mimo-500 transition flex items-center gap-1">👕 Camisetas</a>
-                
-                <div class="relative group cursor-pointer py-2">
-                    <button class="hover:text-mimo-500 transition flex items-center gap-1">
-                        🎨 Por Tema
-                        <svg class="w-4 h-4 text-slate-400 group-hover:rotate-180 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                        </svg>
-                    </button>
-                    <div class="absolute top-full right-0 hidden group-hover:block w-52 bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl py-2 z-50">
-                        <a href="#store" onclick="filterTheme('Profissões')" class="block px-4 py-2.5 hover:bg-mimo-950/60 hover:text-mimo-400 text-xs text-slate-300 transition">💼 Profissões</a>
-                        <a href="#store" onclick="filterTheme('Geek')" class="block px-4 py-2.5 hover:bg-mimo-950/60 hover:text-mimo-400 text-xs text-slate-300 transition">🎮 Geek & Games</a>
-                        <a href="#store" onclick="filterTheme('Séries')" class="block px-4 py-2.5 hover:bg-mimo-950/60 hover:text-mimo-400 text-xs text-slate-300 transition">🎬 Séries & Filmes</a>
-                        <a href="#store" onclick="filterTheme('Esportes')" class="block px-4 py-2.5 hover:bg-mimo-950/60 hover:text-mimo-400 text-xs text-slate-300 transition">⚽ Futebol & Esportes</a>
-                        <a href="#store" onclick="filterTheme('Românticos')" class="block px-4 py-2.5 hover:bg-mimo-950/60 hover:text-mimo-400 text-xs text-slate-300 transition">❤️ Datas Especiais</a>
-                    </div>
-                </div>
-
                 <a href="#solar" class="text-sol-400 hover:text-sol-500 font-bold flex items-center gap-1.5 bg-sol-500/10 border border-sol-500/30 px-3.5 py-1.5 rounded-full transition shadow-sm hover:shadow-glow-sol">
                     ☀️ Energia Solar
                 </a>
@@ -139,236 +89,69 @@
                     </svg>
                     <span id="cartCountBadge" class="bg-mimo-600 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">0</span>
                 </button>
-
-                <button onclick="toggleMobileMenu()" class="md:hidden text-slate-300 hover:text-white p-2">
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                    </svg>
-                </button>
             </div>
-        </div>
-
-        <div id="mobileMenu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
-            <div class="relative mb-3">
-                <input type="text" id="mobileSearchInput" onkeyup="handleMobileSearch()" placeholder="Buscar produtos..." 
-                    class="w-full bg-slate-800 text-sm text-slate-100 placeholder-slate-400 pl-9 pr-4 py-2 rounded-lg border border-slate-700 focus:outline-none">
-                <svg class="w-4 h-4 text-slate-400 absolute left-3 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-                </svg>
-            </div>
-            <a href="#home" onclick="toggleMobileMenu()" class="block py-2 text-sm font-medium text-slate-200">🏠 Início</a>
-            <a href="#store" onclick="filterCategory('Canecas'); toggleMobileMenu()" class="block py-2 text-sm font-medium text-slate-200">☕ Canecas Personalizadas</a>
-            <a href="#store" onclick="filterCategory('Camisetas'); toggleMobileMenu()" class="block py-2 text-sm font-medium text-slate-200">👕 Camisetas Exclusivas</a>
-            <div class="pt-2 border-t border-slate-800 text-xs font-semibold text-slate-400 uppercase tracking-wider">Por Temas</div>
-            <div class="grid grid-cols-2 gap-2 pt-1 text-xs text-slate-300">
-                <button onclick="filterTheme('Profissões'); toggleMobileMenu()" class="text-left py-1 hover:text-mimo-400">💼 Profissões</button>
-                <button onclick="filterTheme('Geek'); toggleMobileMenu()" class="text-left py-1 hover:text-mimo-400">🎮 Geek & Games</button>
-                <button onclick="filterTheme('Séries'); toggleMobileMenu()" class="text-left py-1 hover:text-mimo-400">🎬 Séries & Filmes</button>
-                <button onclick="filterTheme('Esportes'); toggleMobileMenu()" class="text-left py-1 hover:text-mimo-400">⚽ Futebol</button>
-                <button onclick="filterTheme('Românticos'); toggleMobileMenu()" class="text-left py-1 hover:text-mimo-400">❤️ Românticos</button>
-            </div>
-            <a href="#solar" onclick="toggleMobileMenu()" class="block mt-3 text-center py-2.5 bg-sol-500/20 text-sol-400 font-bold rounded-xl border border-sol-500/30">
-                ☀️ Simular Energia Solar
-            </a>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section id="home" class="relative overflow-hidden bg-gradient-to-b from-slate-900 via-slate-950 to-slate-900 py-16 lg:py-24 border-b border-slate-800">
-        <div class="absolute top-1/4 left-10 w-96 h-96 bg-mimo-700/20 rounded-full filter blur-[120px] pointer-events-none"></div>
-        <div class="absolute bottom-10 right-10 w-96 h-96 bg-sol-600/20 rounded-full filter blur-[120px] pointer-events-none"></div>
-
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid lg:grid-cols-12 gap-12 items-center">
-                
                 <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                    <div class="inline-flex items-center gap-2 bg-gradient-to-r from-mimo-900/60 to-purple-900/60 border border-mimo-500/30 text-mimo-300 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider shadow-inner">
-                        <span>✨ A Revolução do Presente & da Economia</span>
-                    </div>
-
                     <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight">
                         Presentes que Emocionam 🎁 <br class="hidden sm:inline">
                         <span class="bg-gradient-to-r from-mimo-400 via-purple-300 to-sol-400 bg-clip-text text-transparent">
                             & Energia que Transforma ☀️
                         </span>
                     </h1>
-
-                    <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                        No <strong>Estúdio Sol & Mimo</strong>, entregamos afeto em forma de presentes exclusivos 
-                        <span class="text-mimo-300 underline font-semibold">já com embalagem premium inclusa</span>, e levamos inteligência sustentável para a sua conta de luz através de projetos de Energia Solar.
+                    <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0">
+                        No <strong>Estúdio Sol & Mimo</strong>, entregamos afeto em forma de presentes exclusivos e levamos inteligência sustentável para a sua conta de luz.
                     </p>
-
                     <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
-                        <a href="#store" class="w-full sm:w-auto bg-gradient-to-r from-mimo-600 to-purple-600 hover:from-mimo-500 hover:to-purple-500 text-white font-extrabold px-8 py-4 rounded-2xl shadow-glow-mimo transition transform hover:-translate-y-1 flex items-center justify-center gap-2">
-                            <span>🎁 Explorar Loja de Presentes</span>
-                        </a>
-                        <a href="#solar" class="w-full sm:w-auto bg-gradient-to-r from-sol-500 to-amber-600 hover:from-sol-400 hover:to-amber-500 text-slate-950 font-black px-8 py-4 rounded-2xl shadow-glow-sol transition transform hover:-translate-y-1 flex items-center justify-center gap-2">
-                            <span>☀️ Simular Economia Solar</span>
-                        </a>
-                    </div>
-
-                    <div class="pt-6 grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs text-slate-300 border-t border-slate-800/80">
-                        <div class="flex items-center gap-2">
-                            <span class="text-base">📦</span>
-                            <span><strong>Caixa & Sacola</strong> Inclusas</span>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <span class="text-base">☕</span>
-                            <span>Canecas <strong>Cerâmica 325ml</strong></span>
-                        </div>
-                        <div class="flex items-center gap-2 col-span-2 sm:col-span-1">
-                            <span class="text-base">⚡</span>
-                            <span>Até <strong>95% Economia</strong> na Luz</span>
-                        </div>
+                        <a href="#store" class="w-full sm:w-auto bg-gradient-to-r from-mimo-600 to-purple-600 text-white font-extrabold px-8 py-4 rounded-2xl shadow-glow-mimo">🎁 Explorar Loja</a>
+                        <a href="#solar" class="w-full sm:w-auto bg-gradient-to-r from-sol-500 to-amber-600 text-slate-950 font-black px-8 py-4 rounded-2xl shadow-glow-sol">☀️ Simular Economia Solar</a>
                     </div>
                 </div>
-
-                <div class="lg:col-span-5 relative flex justify-center">
-                    <div class="relative w-full max-w-md bg-slate-900/90 rounded-3xl p-6 border border-slate-800 shadow-2xl backdrop-blur-xl">
-                        <div class="absolute -top-4 -right-4 bg-gradient-to-r from-mimo-600 to-roseGift-500 text-white font-black text-xs px-4 py-2 rounded-2xl shadow-lg flex items-center gap-1.5 badge-pulse z-10">
-                            <span>🎁 CAIXA KRAFT + SACOLA INCLUSAS</span>
-                        </div>
-
-                        <div class="bg-gradient-to-b from-slate-800/80 to-slate-900 rounded-2xl p-4 border border-slate-700/60 text-center relative overflow-hidden group">
-                            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&auto=format&fit=crop" alt="Destaque Caneca" class="w-full h-48 object-cover rounded-xl mb-3 group-hover:scale-105 transition duration-300">
-                            <span class="bg-mimo-500/20 text-mimo-300 text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full border border-mimo-500/30">
-                                Mais Vendido • Linha Profissões
-                            </span>
-                            <h3 class="text-lg font-black text-white mt-2">Caneca "Dev Full Stack & Café"</h3>
-                            <p class="text-xs text-slate-400 mt-1">Acompanha caixinha decorada e sacolinha especial com laço pronta para entregar.</p>
-                            
-                            <div class="flex items-center justify-between mt-4 pt-3 border-t border-slate-800">
-                                <div>
-                                    <span class="text-xs text-slate-400 block text-left">Preço do Mimo</span>
-                                    <span class="text-xl font-black text-mimo-400">R$ 39,90</span>
-                                </div>
-                                <button type="button" onclick="openProductModal(1)" class="bg-mimo-600 hover:bg-mimo-500 text-white font-bold text-xs px-4 py-2.5 rounded-xl transition shadow-md">
-                                    Simular & Personalizar
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class="mt-4 bg-sol-500/10 border border-sol-500/30 rounded-2xl p-3 flex items-center justify-between text-xs">
-                            <div class="flex items-center gap-2">
-                                <span class="text-xl">☀️</span>
-                                <div>
-                                    <strong class="text-sol-300 block">Sua conta de luz é + R$ 300?</strong>
-                                    <span class="text-slate-400 text-[11px]">Faça um projeto solar e pague quase zero.</span>
-                                </div>
-                            </div>
-                            <a href="#solar" class="text-sol-400 hover:text-sol-300 font-bold underline">Simular</a>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
 
-    <!-- E-Commerce Section -->
+    <!-- Store Section -->
     <section id="store" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4 border-b border-slate-800 pb-6">
-            <div>
-                <span class="text-mimo-400 font-extrabold text-xs uppercase tracking-widest block mb-1">🎁 Catálogo Estúdio Mimo</span>
-                <h2 class="text-3xl font-black text-white">Presentes Criativos & Exclusivos</h2>
-                <p class="text-slate-400 text-sm mt-1">Escolha por produto ou navegue pelos temas especiais.</p>
-            </div>
-
-            <div id="filterTabs" class="flex flex-wrap gap-2 text-xs font-bold">
-                <button onclick="filterCategory('Todos')" id="tab-Todos" class="px-4 py-2 rounded-xl bg-mimo-600 text-white shadow-md transition">
-                    Todos os Produtos
-                </button>
-                <button onclick="filterCategory('Canecas')" id="tab-Canecas" class="px-4 py-2 rounded-xl bg-slate-800 text-slate-300 hover:bg-slate-700 transition">
-                    ☕ Canecas
-                </button>
-                <button onclick="filterCategory('Camisetas')" id="tab-Camisetas" class="px-4 py-2 rounded-xl bg-slate-800 text-slate-300 hover:bg-slate-700 transition">
-                    👕 Camisetas
-                </button>
-            </div>
-        </div>
-
-        <div class="flex items-center gap-2 overflow-x-auto pb-4 mb-6 text-xs no-scrollbar">
-            <span class="text-slate-500 font-bold whitespace-nowrap">Filtrar por Tema:</span>
-            <button onclick="filterTheme('Todos')" class="px-3 py-1.5 rounded-lg bg-slate-800/60 text-slate-300 hover:text-white hover:bg-slate-800 border border-slate-700/60 whitespace-nowrap">
-                ✨ Mostrar Todos
-            </button>
-            <button onclick="filterTheme('Profissões')" class="px-3 py-1.5 rounded-lg bg-slate-800/60 text-slate-300 hover:text-white hover:bg-slate-800 border border-slate-700/60 whitespace-nowrap">
-                💼 Profissões
-            </button>
-            <button onclick="filterTheme('Geek')" class="px-3 py-1.5 rounded-lg bg-slate-800/60 text-slate-300 hover:text-white hover:bg-slate-800 border border-slate-700/60 whitespace-nowrap">
-                🎮 Geek & Games
-            </button>
-            <button onclick="filterTheme('Séries')" class="px-3 py-1.5 rounded-lg bg-slate-800/60 text-slate-300 hover:text-white hover:bg-slate-800 border border-slate-700/60 whitespace-nowrap">
-                🎬 Séries & Filmes
-            </button>
-            <button onclick="filterTheme('Esportes')" class="px-3 py-1.5 rounded-lg bg-slate-800/60 text-slate-300 hover:text-white hover:bg-slate-800 border border-slate-700/60 whitespace-nowrap">
-                ⚽ Futebol
-            </button>
-            <button onclick="filterTheme('Românticos')" class="px-3 py-1.5 rounded-lg bg-slate-800/60 text-slate-300 hover:text-white hover:bg-slate-800 border border-slate-700/60 whitespace-nowrap">
-                ❤️ Românticos
-            </button>
-        </div>
-
-        <div id="activeFilterBadge" class="hidden mb-6 flex items-center gap-2 text-xs text-mimo-300 bg-mimo-950/80 px-4 py-2 rounded-xl border border-mimo-800/60 w-fit">
-            <span>Mostrando resultados para: <strong id="activeFilterText">Profissões</strong></span>
-            <button onclick="resetFilters()" class="ml-2 font-bold hover:text-white underline">Limpar Filtro ✕</button>
-        </div>
-
         <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
-
-        <div id="emptyState" class="hidden text-center py-16 bg-slate-900/50 rounded-3xl border border-slate-800 my-8">
-            <div class="text-5xl mb-3">🔍</div>
-            <h3 class="text-xl font-bold text-white">Nenhum presente encontrado</h3>
-            <p class="text-xs text-slate-400 mt-1">Tente mudar o termo da busca ou selecione outra categoria.</p>
-            <button onclick="resetFilters()" class="mt-4 bg-mimo-600 hover:bg-mimo-500 text-white font-bold text-xs px-5 py-2.5 rounded-xl transition">
-                Ver Todos os Produtos
-            </button>
-        </div>
     </section>
 
-    <!-- Interactive Customizer Modal (Com HTML5 Canvas) -->
+    <!-- Modal do Customizador Canvas -->
     <div id="productModal" onclick="if(event.target === this) closeProductModal()" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-slate-950/85 backdrop-blur-md">
         <div onclick="event.stopPropagation()" class="bg-slate-900 border border-slate-800 rounded-3xl max-w-3xl w-full p-6 sm:p-8 shadow-2xl relative overflow-y-auto max-h-[92vh]">
             <button type="button" onclick="closeProductModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl p-2 z-20">✕</button>
 
             <div class="grid md:grid-cols-12 gap-6 items-start">
-                
-                <!-- Visor do Canvas Interativo (Lado Esquerdo - 6 cols) -->
                 <div class="md:col-span-6 space-y-3">
-                    <div class="relative bg-slate-950 rounded-2xl overflow-hidden border border-slate-800 flex items-center justify-center min-h-[260px] p-2 shadow-inner">
-                        <canvas id="previewCanvas" width="400" height="320" class="w-full h-auto rounded-xl shadow-lg border border-slate-800/80 bg-slate-900"></canvas>
-
-                        <span id="modalPackagingBadge" class="absolute top-4 left-4 bg-mimo-600 text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-md shadow-md pointer-events-none">
-                            🎁 Caixa + Sacola Inclusas
-                        </span>
-                    </div>
-
-                    <div class="text-[11px] text-slate-400 text-center flex items-center justify-center gap-1">
-                        <span>✨ Pré-visualização em tempo real da estampa final</span>
+                    <div class="relative bg-slate-950 rounded-2xl overflow-hidden border border-slate-800 flex items-center justify-center min-h-[260px] p-2">
+                        <canvas id="previewCanvas" width="400" height="320" class="w-full h-auto rounded-xl shadow-lg border border-slate-800 bg-slate-900"></canvas>
                     </div>
                 </div>
 
-                <!-- Painel de Controles e Personalização (Lado Direito - 6 cols) -->
                 <div class="md:col-span-6 space-y-4">
                     <div>
                         <span id="modalProductCategory" class="text-[10px] font-bold text-mimo-400 uppercase tracking-wider block mb-0.5">Mimo</span>
-                        <h3 id="modalProductTitle" class="text-xl font-black text-white leading-snug">Título do Produto</h3>
+                        <h3 id="modalProductTitle" class="text-xl font-black text-white leading-snug">Título</h3>
                     </div>
 
-                    <!-- Controles de Edição da Estampa -->
                     <div class="bg-slate-950/80 p-3.5 rounded-2xl border border-slate-800 space-y-3">
                         <span class="text-xs font-bold text-sol-400 block border-b border-slate-800 pb-1">🎨 Personalize a sua Estampa:</span>
                         
                         <div>
                             <label class="block text-[11px] font-bold text-slate-300 mb-1">✍️ Texto / Nome Personalizado:</label>
-                            <input type="text" id="customTextInput" oninput="renderCanvasPreview()" placeholder="Ex: Dr. Ataíde / 'Melhor Pai'"
-                                class="w-full bg-slate-800 text-white text-xs px-3 py-2 rounded-xl border border-slate-700 focus:outline-none focus:border-mimo-500 transition">
+                            <input type="text" id="customTextInput" oninput="renderCanvasPreview()" placeholder="Ex: Dr. Ataíde"
+                                class="w-full bg-slate-800 text-white text-xs px-3 py-2 rounded-xl border border-slate-700 focus:outline-none focus:border-mimo-500">
                         </div>
 
                         <div class="grid grid-cols-2 gap-2 text-xs">
                             <div>
                                 <label class="block text-[10px] font-bold text-slate-400 mb-1">Estilo da Fonte:</label>
-                                <select id="customFontSelect" onchange="renderCanvasPreview()" class="w-full bg-slate-800 text-slate-200 text-xs p-2 rounded-xl border border-slate-700 focus:outline-none">
+                                <select id="customFontSelect" onchange="renderCanvasPreview()" class="w-full bg-slate-800 text-slate-200 text-xs p-2 rounded-xl border border-slate-700">
                                     <option value="Georgia">Sérifada Clássica</option>
                                     <option value="Cinzel">Cinzel Dourada</option>
                                     <option value="Caveat">Manuscrita / Cursiva</option>
@@ -377,7 +160,7 @@
                             </div>
                             <div>
                                 <label class="block text-[10px] font-bold text-slate-400 mb-1">Cor do Texto:</label>
-                                <select id="customColorSelect" onchange="renderCanvasPreview()" class="w-full bg-slate-800 text-slate-200 text-xs p-2 rounded-xl border border-slate-700 focus:outline-none">
+                                <select id="customColorSelect" onchange="renderCanvasPreview()" class="w-full bg-slate-800 text-slate-200 text-xs p-2 rounded-xl border border-slate-700">
                                     <option value="#F59E0B">🟡 Dourado Sol</option>
                                     <option value="#FFFFFF">⚪ Branco Puro</option>
                                     <option value="#F43F5E">🔴 Rosa / Vermelho</option>
@@ -394,13 +177,10 @@
                         </div>
                     </div>
 
-                    <!-- Variações de Tamanho / Material -->
                     <div id="modalVariantContainer">
-                        <label id="modalVariantLabel" class="block text-xs font-bold text-slate-300 mb-1">Escolha a Variação:</label>
                         <div id="modalVariantOptions" class="grid grid-cols-2 gap-2 text-xs"></div>
                     </div>
 
-                    <!-- Preço e Adição ao Carrinho -->
                     <div class="pt-2 border-t border-slate-800 flex items-center justify-between">
                         <div>
                             <span class="text-[10px] text-slate-400 block uppercase">Preço Total</span>
@@ -408,607 +188,55 @@
                         </div>
 
                         <div class="flex items-center gap-2 bg-slate-800 p-1 rounded-xl border border-slate-700">
-                            <button type="button" onclick="changeModalQty(-1)" class="w-8 h-8 font-bold text-slate-300 hover:text-white flex items-center justify-center">-</button>
+                            <button type="button" onclick="changeModalQty(-1)" class="w-8 h-8 font-bold text-slate-300 flex items-center justify-center">-</button>
                             <span id="modalQtyDisplay" class="font-bold text-sm w-6 text-center">1</span>
-                            <button type="button" onclick="changeModalQty(1)" class="w-8 h-8 font-bold text-slate-300 hover:text-white flex items-center justify-center">+</button>
+                            <button type="button" onclick="changeModalQty(1)" class="w-8 h-8 font-bold text-slate-300 flex items-center justify-center">+</button>
                         </div>
                     </div>
 
-                    <button type="button" onclick="addModalItemToCart()" class="w-full bg-mimo-600 hover:bg-mimo-500 text-white font-extrabold py-3.5 rounded-xl shadow-glow-mimo transition flex items-center justify-center gap-2">
-                        <span>🛒 Confirmar e Adicionar ao Carrinho</span>
+                    <button type="button" onclick="addModalItemToCart()" class="w-full bg-mimo-600 hover:bg-mimo-500 text-white font-extrabold py-3.5 rounded-xl shadow-glow-mimo">
+                        🛒 Confirmar e Adicionar ao Carrinho
                     </button>
                 </div>
-
             </div>
         </div>
     </div>
 
-    <!-- Solar Energy Section -->
-    <section id="solar" class="py-20 relative bg-gradient-to-b from-slate-900 via-slate-950 to-slate-900 border-t border-slate-800 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
-                <span class="inline-flex items-center gap-2 bg-sol-500/10 border border-sol-500/30 text-sol-400 text-xs font-black uppercase px-4 py-1.5 rounded-full shadow-inner">
-                    ☀️ Divisão Solar • Estúdio Sol
-                </span>
-                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
-                    Simulador Inteligente de <span class="bg-gradient-to-r from-sol-400 to-amber-500 bg-clip-text text-transparent">Economia Solar</span>
-                </h2>
-                <p class="text-slate-300 text-sm sm:text-base">
-                    Calcule em tempo real quanto dinheiro você deixará de pagar para a concessionária de energia e comece a gerar sua própria energia limpa.
-                </p>
-            </div>
-
-            <div class="grid lg:grid-cols-12 gap-8 items-start">
-                <div class="lg:col-span-6 bg-slate-900/90 rounded-3xl p-6 sm:p-8 border border-slate-800 shadow-2xl backdrop-blur-xl space-y-6">
-                    <div>
-                        <label class="block text-sm font-bold text-slate-200 mb-2 flex justify-between items-center">
-                            <span>Qual o valor médio da sua conta de luz atual?</span>
-                            <span class="text-xs text-sol-400 font-normal">Arraste para ajustar</span>
-                        </label>
-                        
-                        <div class="relative mb-4">
-                            <span class="absolute left-4 top-3 text-xl font-bold text-slate-400">R$</span>
-                            <input type="number" id="solarBillInput" value="500" min="100" max="10000" step="50" oninput="updateSolarFromInput()"
-                                class="w-full bg-slate-800 text-white font-black text-2xl pl-12 pr-4 py-2.5 rounded-2xl border border-slate-700 focus:outline-none focus:border-sol-500">
-                        </div>
-
-                        <input type="range" id="solarRange" min="100" max="5000" step="50" value="500" oninput="updateSolarFromRange()" 
-                            class="w-full accent-sol-500 h-2 bg-slate-800 rounded-lg cursor-pointer">
-                    </div>
-
-                    <div class="grid grid-cols-2 gap-4 pt-2 border-t border-slate-800 text-xs">
-                        <div>
-                            <label class="block font-bold text-slate-300 mb-1">Tipo de Imóvel</label>
-                            <select id="propertyType" onchange="calculateSolar()" class="w-full bg-slate-800 text-slate-200 p-2.5 rounded-xl border border-slate-700">
-                                <option value="Residencial">Residencial</option>
-                                <option value="Comercial">Comercial / Empresa</option>
-                                <option value="Rural">Chácara / Rural</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block font-bold text-slate-300 mb-1">Estado (Região)</label>
-                            <select id="stateSelect" onchange="calculateSolar()" class="w-full bg-slate-800 text-slate-200 p-2.5 rounded-xl border border-slate-700">
-                                <option value="RJ">Rio de Janeiro (RJ)</option>
-                                <option value="SP">São Paulo (SP)</option>
-                                <option value="MG">Minas Gerais (MG)</option>
-                                <option value="ES">Espírito Santo (ES)</option>
-                                <option value="OUTRO">Outro Estado</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="bg-gradient-to-br from-slate-950 to-slate-900 rounded-2xl p-5 border border-sol-500/20 space-y-4">
-                        <div class="grid grid-cols-2 gap-4">
-                            <div>
-                                <span class="text-[11px] font-bold text-slate-400 block uppercase">Economia Estimada / Mês</span>
-                                <span id="resMonthlySavings" class="text-2xl font-black text-sol-400">R$ 450,00</span>
-                            </div>
-                            <div>
-                                <span class="text-[11px] font-bold text-slate-400 block uppercase">Economia / Ano</span>
-                                <span id="resAnnualSavings" class="text-2xl font-black text-amber-300">R$ 5.400,00</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <button onclick="sendSolarWhatsAppLead()" class="w-full bg-gradient-to-r from-sol-500 via-amber-500 to-sol-600 hover:from-sol-400 text-slate-950 font-black py-4 rounded-2xl shadow-glow-sol transition flex items-center justify-center gap-2">
-                        <span>📲 Receber Projeto Completo no WhatsApp</span>
-                    </button>
-                </div>
-
-                <div class="lg:col-span-6 space-y-6">
-                    <div class="bg-slate-900/60 p-6 sm:p-8 rounded-3xl border border-slate-800 space-y-6">
-                        <h3 class="text-2xl font-extrabold text-white">Por que fazer seu projeto com o Estúdio Sol?</h3>
-                        <p class="text-slate-300 text-sm">Oferecemos homologação rápida na concessionária, equipamentos Tier-1 com 25 anos de garantia e financiamento solar sem entrada.</p>
-                    </div>
-                </div>
+    <!-- Solar Section -->
+    <section id="solar" class="py-20 bg-slate-900 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 text-center space-y-4">
+            <h2 class="text-3xl font-black text-white">Simulador de Economia Solar</h2>
+            <div class="max-w-md mx-auto space-y-3">
+                <input type="number" id="solarBillInput" value="500" oninput="updateSolarFromInput()" class="w-full bg-slate-800 text-white text-xl p-3 rounded-xl border border-slate-700 text-center">
+                <input type="range" id="solarRange" min="100" max="5000" step="50" value="500" oninput="updateSolarFromRange()" class="w-full accent-sol-500">
+                <div class="text-sol-400 font-bold text-xl" id="resMonthlySavings">R$ 450,00</div>
+                <button onclick="sendSolarWhatsAppLead()" class="w-full bg-sol-500 text-slate-950 font-black py-3 rounded-xl">Receber Projeto Solar</button>
             </div>
         </div>
     </section>
 
-    <!-- Interactive Cart Drawer -->
+    <!-- Cart Drawer -->
     <div id="cartDrawer" class="fixed inset-0 z-50 hidden">
         <div onclick="toggleCartDrawer()" class="absolute inset-0 bg-slate-950/70 backdrop-blur-sm"></div>
-        <div class="absolute top-0 right-0 bottom-0 w-full max-w-md bg-slate-900 border-l border-slate-800 p-6 flex flex-col justify-between shadow-2xl z-10">
+        <div class="absolute top-0 right-0 bottom-0 w-full max-w-md bg-slate-900 border-l border-slate-800 p-6 flex flex-col justify-between z-10">
             <div>
-                <div class="flex items-center justify-between pb-4 border-b border-slate-800">
-                    <div class="flex items-center gap-2">
-                        <span class="text-xl">🛒</span>
-                        <h3 class="font-black text-lg text-white">Seu Carrinho de Mimos</h3>
-                    </div>
-                    <button type="button" onclick="toggleCartDrawer()" class="text-slate-400 hover:text-white text-xl p-1">✕</button>
-                </div>
-
-                <div id="cartItemsList" class="mt-4 space-y-3 max-h-[50vh] overflow-y-auto pr-1"></div>
-
-                <div id="cartEmptyMsg" class="hidden text-center py-12 space-y-2">
-                    <div class="text-4xl">🛍️</div>
-                    <p class="text-sm font-bold text-slate-300">Seu carrinho está vazio</p>
-                </div>
+                <h3 class="font-black text-lg text-white mb-4">Seu Carrinho</h3>
+                <div id="cartItemsList" class="space-y-3"></div>
+                <div id="cartEmptyMsg" class="hidden text-slate-400 text-sm text-center py-8">Carrinho vazio</div>
             </div>
-
-            <div id="cartSummarySection" class="pt-4 border-t border-slate-800 space-y-3">
-                <div class="space-y-1 text-xs">
-                    <div class="flex justify-between text-slate-400">
-                        <span>Subtotal dos Mimos:</span>
-                        <span id="cartSubtotalVal" class="font-bold text-slate-200">R$ 0,00</span>
-                    </div>
-                    <div class="flex justify-between text-base font-black text-white pt-2 border-t border-slate-800">
-                        <span>Total:</span>
-                        <span id="cartTotalVal" class="text-mimo-400">R$ 0,00</span>
-                    </div>
+            <div class="pt-4 border-t border-slate-800 space-y-3">
+                <div class="flex justify-between font-black text-white">
+                    <span>Total:</span>
+                    <span id="cartTotalVal" class="text-mimo-400">R$ 0,00</span>
                 </div>
-
-                <button type="button" onclick="checkoutViaWhatsApp()" class="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 text-white font-extrabold py-3.5 rounded-xl shadow-lg transition flex items-center justify-center gap-2 text-sm">
-                    <span>💬 Finalizar Pedido no WhatsApp</span>
+                <button onclick="checkoutViaWhatsApp()" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold py-3.5 rounded-xl">
+                    Finalizar Pedido no WhatsApp
                 </button>
             </div>
         </div>
     </div>
 
-    <!-- Toast Notifications -->
-    <div id="toastContainer" class="fixed top-24 right-4 z-50 flex flex-col gap-2 pointer-events-none"></div>
-
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/5521965480938?text=Olá!%20Vim%20pelo%20site%20Estúdio%20Sol%20%26%20Mimo." target="_blank" 
-        class="fixed bottom-6 right-6 bg-emerald-500 hover:bg-emerald-400 text-white p-4 rounded-full shadow-2xl z-40 flex items-center justify-center transition transform hover:scale-110 group">
-        <span class="absolute -top-1 -right-1 bg-rose-500 text-white text-[10px] font-black w-5 h-5 rounded-full flex items-center justify-center border-2 border-slate-950 animate-bounce">1</span>
-        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-    </a>
-
-    <!-- JavaScript Application Logic -->
-    <script>
-        const PRODUCTS = [
-            {
-                id: 1,
-                title: 'Caneca "Dev Full Stack & Café"',
-                category: 'Canecas',
-                theme: 'Profissões',
-                price: 39.90,
-                image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&auto=format&fit=crop',
-                desc: 'Caneca de cerâmica 325ml com estampa sublimada em alta definição.',
-                hasVariants: true,
-                variantType: 'mug',
-                variants: [
-                    { name: 'Cerâmica Branca', priceOffset: 0 },
-                    { name: 'Polímero Leve', priceOffset: -5.00 },
-                    { name: 'Mágica (Muda de Cor)', priceOffset: 10.00 }
-                ]
-            },
-            {
-                id: 2,
-                title: 'Caneca "Melhor Advogado(a)"',
-                category: 'Canecas',
-                theme: 'Profissões',
-                price: 39.90,
-                image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&auto=format&fit=crop',
-                desc: 'Presente sofisticado para profissionais do Direito com caixa e sacola.',
-                hasVariants: true,
-                variantType: 'mug',
-                variants: [
-                    { name: 'Cerâmica Branca', priceOffset: 0 },
-                    { name: 'Mágica (Preta ao Frio)', priceOffset: 10.00 }
-                ]
-            },
-            {
-                id: 3,
-                title: 'Camiseta "Full Stack Developer"',
-                category: 'Camisetas',
-                theme: 'Geek',
-                price: 59.90,
-                image: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=600&auto=format&fit=crop',
-                desc: '100% Algodão penteado fio 30.1. Toque macio e estampa resistente.',
-                hasVariants: true,
-                variantType: 'tshirt',
-                variants: [
-                    { name: 'Tamanho P', priceOffset: 0 },
-                    { name: 'Tamanho M', priceOffset: 0 },
-                    { name: 'Tamanho G', priceOffset: 0 },
-                    { name: 'Tamanho GG', priceOffset: 5.00 }
-                ]
-            },
-            {
-                id: 4,
-                title: 'Caneca Mágica "Amor Eterno"',
-                category: 'Canecas',
-                theme: 'Românticos',
-                price: 49.90,
-                image: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600&auto=format&fit=crop',
-                desc: 'Revela a frase e foto especial ao despejar bebida quente.',
-                hasVariants: false
-            },
-            {
-                id: 5,
-                title: 'Caneca "Level 100 Boss Gamer"',
-                category: 'Canecas',
-                theme: 'Geek',
-                price: 39.90,
-                image: 'https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=600&auto=format&fit=crop',
-                desc: 'Para os apaixonados por video games e setups de alta performance.',
-                hasVariants: true,
-                variantType: 'mug',
-                variants: [
-                    { name: 'Cerâmica Branca', priceOffset: 0 },
-                    { name: 'Polímero Resistente', priceOffset: -5.00 }
-                ]
-            },
-            {
-                id: 6,
-                title: 'Camiseta "Foco no Objetivo"',
-                category: 'Camisetas',
-                theme: 'Profissões',
-                price: 59.90,
-                image: 'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=600&auto=format&fit=crop',
-                desc: 'Minimalista e inspiradora. Tecido respirável e muito confortável.',
-                hasVariants: true,
-                variantType: 'tshirt',
-                variants: [
-                    { name: 'Tamanho P', priceOffset: 0 },
-                    { name: 'Tamanho M', priceOffset: 0 },
-                    { name: 'Tamanho G', priceOffset: 0 },
-                    { name: 'Tamanho GG', priceOffset: 5.00 }
-                ]
-            }
-        ];
-
-        let state = {
-            activeCategory: 'Todos',
-            activeTheme: 'Todos',
-            searchQuery: '',
-            cart: [],
-            selectedProductForModal: null,
-            modalSelectedVariant: null,
-            modalQty: 1,
-            uploadedImageObj: null
-        };
-
-        document.addEventListener('DOMContentLoaded', () => {
-            renderProducts();
-            calculateSolar();
-        });
-
-        function renderProducts() {
-            const grid = document.getElementById('productGrid');
-            if (!grid) return;
-            grid.innerHTML = '';
-
-            let filtered = PRODUCTS.filter(p => {
-                const matchCat = state.activeCategory === 'Todos' || p.category === state.activeCategory;
-                const matchTheme = state.activeTheme === 'Todos' || p.theme === state.activeTheme;
-                const matchSearch = p.title.toLowerCase().includes(state.searchQuery.toLowerCase());
-                return matchCat && matchTheme && matchSearch;
-            });
-
-            filtered.forEach(product => {
-                grid.appendChild(createProductCard(product));
-            });
-        }
-
-        function createProductCard(product) {
-            const card = document.createElement('div');
-            card.className = "bg-slate-900 rounded-3xl border border-slate-800 shadow-xl overflow-hidden flex flex-col justify-between hover:border-mimo-500/50 transition duration-300 group";
-            card.innerHTML = `
-                <div>
-                    <div class="relative bg-slate-950 h-52 overflow-hidden border-b border-slate-800/80">
-                        <img src="${product.image}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        <span class="absolute top-3 left-3 bg-mimo-600/90 text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-lg">🎁 Caixa + Sacola</span>
-                    </div>
-                    <div class="p-5 space-y-2">
-                        <span class="text-[10px] font-extrabold text-mimo-400 bg-mimo-950 px-2 py-0.5 rounded border border-mimo-800/60 uppercase">${product.theme}</span>
-                        <h3 class="font-bold text-white text-base">${product.title}</h3>
-                        <p class="text-xs text-slate-400 line-clamp-2">${product.desc}</p>
-                    </div>
-                </div>
-                <div class="p-5 pt-0">
-                    <div class="flex items-center justify-between mb-3 pt-3 border-t border-slate-800">
-                        <span class="text-xl font-black text-white">R$ ${product.price.toFixed(2).replace('.', ',')}</span>
-                        <span class="text-[10px] text-emerald-400 font-bold bg-emerald-950/80 px-2 py-1 rounded">Embalagem Grátis</span>
-                    </div>
-                    <button type="button" onclick="openProductModal(${product.id})" class="w-full bg-slate-800 hover:bg-mimo-600 text-white font-extrabold text-xs py-3 rounded-xl transition">
-                        Simular & Personalizar
-                    </button>
-                </div>
-            `;
-            return card;
-        }
-
-        /* HTML5 Canvas Live Preview Customizer Engine */
-        function openProductModal(productId) {
-            const product = PRODUCTS.find(p => p.id == productId);
-            if (!product) return;
-
-            state.selectedProductForModal = product;
-            state.modalQty = 1;
-            state.uploadedImageObj = null;
-
-            document.getElementById('modalProductTitle').innerText = product.title;
-            document.getElementById('modalProductCategory').innerText = `${product.category} • ${product.theme}`;
-            document.getElementById('customTextInput').value = '';
-            document.getElementById('customImageInput').value = '';
-
-            const variantContainer = document.getElementById('modalVariantContainer');
-            const variantOptions = document.getElementById('modalVariantOptions');
-            variantOptions.innerHTML = '';
-
-            if (product.hasVariants && product.variants.length > 0) {
-                variantContainer.classList.remove('hidden');
-                state.modalSelectedVariant = product.variants[0];
-                product.variants.forEach((v, idx) => {
-                    const btn = document.createElement('button');
-                    btn.type = 'button';
-                    btn.className = `p-2 rounded-xl border text-left font-semibold ${idx === 0 ? 'border-mimo-500 bg-mimo-950 text-white' : 'border-slate-700 bg-slate-800 text-slate-300'}`;
-                    btn.onclick = () => selectModalVariant(v, btn);
-                    btn.innerHTML = `<div>${v.name}</div>`;
-                    variantOptions.appendChild(btn);
-                });
-            } else {
-                variantContainer.classList.add('hidden');
-                state.modalSelectedVariant = null;
-            }
-
-            updateModalPrice();
-            const modal = document.getElementById('productModal');
-            modal.classList.remove('hidden');
-            modal.style.display = 'flex';
-
-            renderCanvasPreview();
-        }
-
-        function renderCanvasPreview() {
-            const canvas = document.getElementById('previewCanvas');
-            if (!canvas) return;
-            const ctx = canvas.getContext('2d');
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-            const baseImg = new Image();
-            baseImg.crossOrigin = "anonymous";
-            baseImg.src = state.selectedProductForModal ? state.selectedProductForModal.image : '';
-
-            baseImg.onload = function() {
-                // Desenhar Fundo do Produto
-                ctx.drawImage(baseImg, 0, 0, canvas.width, canvas.height);
-
-                // Moldura/Máscara de Estampa
-                ctx.strokeStyle = "rgba(168, 85, 247, 0.4)";
-                ctx.lineWidth = 2;
-                ctx.setLineDash([6, 6]);
-                ctx.strokeRect(40, 40, canvas.width - 80, canvas.height - 80);
-                ctx.setLineDash([]);
-
-                // Desenhar Foto Carregada se existir
-                if (state.uploadedImageObj) {
-                    ctx.save();
-                    const imgW = 110;
-                    const imgH = 110;
-                    ctx.drawImage(state.uploadedImageObj, (canvas.width / 2) - (imgW / 2), (canvas.height / 2) - (imgH / 2) - 15, imgW, imgH);
-                    ctx.restore();
-                }
-
-                // Desenhar Texto do Cliente
-                const text = document.getElementById('customTextInput').value;
-                if (text.trim() !== '') {
-                    const font = document.getElementById('customFontSelect').value || 'Georgia';
-                    const color = document.getElementById('customColorSelect').value || '#F59E0B';
-
-                    ctx.save();
-                    ctx.font = `bold 22px "${font}", Georgia, serif`;
-                    ctx.fillStyle = color;
-                    ctx.textAlign = 'center';
-                    ctx.shadowColor = 'rgba(0, 0, 0, 0.85)';
-                    ctx.shadowBlur = 6;
-                    ctx.shadowOffsetY = 2;
-
-                    const yPos = state.uploadedImageObj ? canvas.height - 55 : canvas.height / 2 + 10;
-                    ctx.fillText(text, canvas.width / 2, yPos);
-                    ctx.restore();
-                }
-            };
-        }
-
-        function handleImageUpload(event) {
-            const file = event.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    const img = new Image();
-                    img.onload = function() {
-                        state.uploadedImageObj = img;
-                        renderCanvasPreview();
-                    };
-                    img.src = e.target.result;
-                };
-                reader.readAsDataURL(file);
-            } else {
-                state.uploadedImageObj = null;
-                renderCanvasPreview();
-            }
-        }
-
-        function closeProductModal() {
-            const modal = document.getElementById('productModal');
-            modal.classList.add('hidden');
-            modal.style.display = 'none';
-        }
-
-        function selectModalVariant(variant, btnElement) {
-            state.modalSelectedVariant = variant;
-            const buttons = document.querySelectorAll('#modalVariantOptions button');
-            buttons.forEach(b => b.className = "p-2 rounded-xl border border-slate-700 bg-slate-800 text-slate-300 text-left font-semibold");
-            btnElement.className = "p-2 rounded-xl border border-mimo-500 bg-mimo-950 text-white text-left font-semibold";
-            updateModalPrice();
-        }
-
-        function changeModalQty(delta) {
-            state.modalQty = Math.max(1, state.modalQty + delta);
-            document.getElementById('modalQtyDisplay').innerText = state.modalQty;
-            updateModalPrice();
-        }
-
-        function updateModalPrice() {
-            if (!state.selectedProductForModal) return;
-            let unitPrice = state.selectedProductForModal.price;
-            if (state.modalSelectedVariant) {
-                unitPrice += state.modalSelectedVariant.priceOffset;
-            }
-            const totalPrice = unitPrice * state.modalQty;
-            document.getElementById('modalProductPrice').innerText = `R$ ${totalPrice.toFixed(2).replace('.', ',')}`;
-        }
-
-        function addModalItemToCart() {
-            if (!state.selectedProductForModal) return;
-
-            const customText = document.getElementById('customTextInput').value.trim();
-            const customFont = document.getElementById('customFontSelect').value;
-            const customColor = document.getElementById('customColorSelect').value;
-            const hasPhoto = state.uploadedImageObj !== null;
-
-            let unitPrice = state.selectedProductForModal.price;
-            let variantName = 'Padrão';
-            if (state.modalSelectedVariant) {
-                unitPrice += state.modalSelectedVariant.priceOffset;
-                variantName = state.modalSelectedVariant.name;
-            }
-
-            const cartItem = {
-                cartItemId: Date.now(),
-                title: state.selectedProductForModal.title,
-                image: state.selectedProductForModal.image,
-                variantName: variantName,
-                customText: customText || 'Padrão da Estampa',
-                customFont: customFont,
-                customColor: customColor,
-                hasPhoto: hasPhoto ? 'Sim (Envia no WhatsApp)' : 'Não',
-                unitPrice: unitPrice,
-                qty: state.modalQty
-            };
-
-            state.cart.push(cartItem);
-            updateCartUI();
-            closeProductModal();
-            showToast(`🎁 "${cartItem.title}" adicionado com a prévia personalizada!`);
-            toggleCartDrawer();
-        }
-
-        function updateCartUI() {
-            const badge = document.getElementById('cartCountBadge');
-            badge.innerText = state.cart.reduce((acc, item) => acc + item.qty, 0);
-
-            const itemsList = document.getElementById('cartItemsList');
-            const emptyMsg = document.getElementById('cartEmptyMsg');
-            itemsList.innerHTML = '';
-
-            if (state.cart.length === 0) {
-                emptyMsg.classList.remove('hidden');
-            } else {
-                emptyMsg.classList.add('hidden');
-                state.cart.forEach((item, index) => {
-                    const itemEl = document.createElement('div');
-                    itemEl.className = "bg-slate-950 p-3 rounded-2xl border border-slate-800 flex items-center justify-between gap-3 text-xs";
-                    itemEl.innerHTML = `
-                        <div class="flex items-center gap-3">
-                            <img src="${item.image}" class="w-12 h-12 object-cover rounded-xl border border-slate-800">
-                            <div>
-                                <h4 class="font-bold text-white">${item.title}</h4>
-                                <span class="text-[10px] text-mimo-400 font-semibold block">${item.variantName}</span>
-                                ${item.customText !== 'Padrão da Estampa' ? `<span class="text-[10px] text-slate-300 block">✍️ "${item.customText}"</span>` : ''}
-                                <span class="font-black text-slate-200 mt-0.5 block">R$ ${(item.unitPrice * item.qty).toFixed(2).replace('.', ',')}</span>
-                            </div>
-                        </div>
-                        <button type="button" onclick="removeCartItem(${index})" class="text-slate-500 hover:text-rose-400 font-bold p-1">✕</button>
-                    `;
-                    itemsList.appendChild(itemEl);
-                });
-            }
-
-            const subtotal = state.cart.reduce((acc, item) => acc + (item.unitPrice * item.qty), 0);
-            document.getElementById('cartSubtotalVal').innerText = `R$ ${subtotal.toFixed(2).replace('.', ',')}`;
-            document.getElementById('cartTotalVal').innerText = `R$ ${subtotal.toFixed(2).replace('.', ',')}`;
-        }
-
-        function removeCartItem(index) {
-            state.cart.splice(index, 1);
-            updateCartUI();
-        }
-
-        function toggleCartDrawer() {
-            document.getElementById('cartDrawer').classList.toggle('hidden');
-        }
-
-        function filterCategory(cat) {
-            state.activeCategory = cat;
-            renderProducts();
-        }
-
-        function filterTheme(theme) {
-            state.activeTheme = theme;
-            renderProducts();
-        }
-
-        function resetFilters() {
-            state.activeCategory = 'Todos';
-            state.activeTheme = 'Todos';
-            renderProducts();
-        }
-
-        function checkoutViaWhatsApp() {
-            if (state.cart.length === 0) return;
-
-            const phone = "5521965480938";
-            let itemsSummary = "";
-            let total = 0;
-
-            state.cart.forEach((item, i) => {
-                const totalItem = item.unitPrice * item.qty;
-                total += totalItem;
-                itemsSummary += `${i + 1}. *${item.title}* (${item.variantName}) x${item.qty} - R$ ${totalItem.toFixed(2)}%0A` +
-                                `   ✍️ *Texto Estampa:* ${item.customText}%0A` +
-                                `   🎨 *Fonte/Cor:* ${item.customFont} / ${item.customColor}%0A` +
-                                `   🖼️ *Anexo de Foto:* ${item.hasPhoto}%0A%0A`;
-            });
-
-            const text = `🎁 *PEDIDO COM PRÉ-VISUALIZAÇÃO - ESTÚDIO MIMO*%0A%0A` +
-                         `*Itens Personalizados:*%0A${itemsSummary}` +
-                         `*TOTAL:* R$ ${total.toFixed(2)}%0A%0A` +
-                         `Gostaria de confirmar a entrega e o pagamento!`;
-
-            window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
-        }
-
-        function showToast(msg) {
-            const container = document.getElementById('toastContainer');
-            const toast = document.createElement('div');
-            toast.className = "bg-slate-900 border border-mimo-500 text-white text-xs font-bold px-4 py-3 rounded-2xl shadow-2xl transition transform opacity-100 pointer-events-auto";
-            toast.innerText = msg;
-            container.appendChild(toast);
-            setTimeout(() => toast.remove(), 3000);
-        }
-
-        function updateSolarFromRange() {
-            const val = document.getElementById('solarRange').value;
-            document.getElementById('solarBillInput').value = val;
-            calculateSolar();
-        }
-
-        function updateSolarFromInput() {
-            const val = document.getElementById('solarBillInput').value;
-            document.getElementById('solarRange').value = val;
-            calculateSolar();
-        }
-
-        function calculateSolar() {
-            const bill = parseFloat(document.getElementById('solarBillInput').value) || 0;
-            const monthlySavings = bill * 0.90;
-            const annualSavings = monthlySavings * 12;
-
-            document.getElementById('resMonthlySavings').innerText = `R$ ${monthlySavings.toFixed(2).replace('.', ',')}`;
-            document.getElementById('resAnnualSavings').innerText = `R$ ${annualSavings.toFixed(2).replace('.', ',')}`;
-        }
-
-        function sendSolarWhatsAppLead() {
-            const bill = document.getElementById('solarBillInput').value;
-            const phone = "5521965480938";
-            const text = `☀️ *SOLICITAÇÃO DE ESTUDO SOLAR - ESTÚDIO SOL*%0A%0A*Valor da Conta:* R$ ${bill},00/mês%0AGostaria de receber uma proposta detalhada!`;
-            window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
-        }
-    </script>
+    <!-- JavaScript Externo (Carregado com 'defer' para não travar a renderização) -->
+    <script src="script.js" defer></script>
 </body>
 </html>
